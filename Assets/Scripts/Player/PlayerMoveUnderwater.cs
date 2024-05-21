@@ -20,8 +20,8 @@ public class PlayerMoveUnderwater : MonoBehaviour
     public float dashingCooldown;
 
     [SerializeField] private TrailRenderer tr;
-    
 
+    public PointManager pm;
     void ProcessInputs()
     {
         if (isDashing)
@@ -89,4 +89,14 @@ public class PlayerMoveUnderwater : MonoBehaviour
     {
         Move();
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Pearl_1"))
+        {
+            Destroy(other.gameObject);
+            pm.pointCount++;
+        }
+    }
+        
 }
