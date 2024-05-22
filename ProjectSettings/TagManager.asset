@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Pearl_1
+  - Pearl_2
+  - Pearl_3
+  - InkBottle
+  - HealthPotion
   layers:
   - Default
   - TransparentFX
