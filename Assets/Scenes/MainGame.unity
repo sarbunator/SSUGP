@@ -578,6 +578,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 997353531}
     m_Modifications:
+    - target: {fileID: 179180567566182266, guid: c4c9bfe6e1a105643a906e229e98ecb8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ba09cddd254a1f54aa4b3a444261eaf6, type: 3}
     - target: {fileID: 321853571906510399, guid: c4c9bfe6e1a105643a906e229e98ecb8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6245866
@@ -714,6 +718,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 997353531}
     m_Modifications:
+    - target: {fileID: 179180567566182266, guid: c4c9bfe6e1a105643a906e229e98ecb8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ba09cddd254a1f54aa4b3a444261eaf6, type: 3}
     - target: {fileID: 321853571906510399, guid: c4c9bfe6e1a105643a906e229e98ecb8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.17
@@ -782,6 +790,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 997353531}
     m_Modifications:
+    - target: {fileID: 179180567566182266, guid: c4c9bfe6e1a105643a906e229e98ecb8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ba09cddd254a1f54aa4b3a444261eaf6, type: 3}
     - target: {fileID: 321853571906510399, guid: c4c9bfe6e1a105643a906e229e98ecb8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.66
@@ -1154,6 +1166,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 997353531}
     m_Modifications:
+    - target: {fileID: 179180567566182266, guid: c4c9bfe6e1a105643a906e229e98ecb8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ba09cddd254a1f54aa4b3a444261eaf6, type: 3}
     - target: {fileID: 321853571906510399, guid: c4c9bfe6e1a105643a906e229e98ecb8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6245866
