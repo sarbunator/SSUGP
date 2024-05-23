@@ -11,6 +11,7 @@ public class PlayerMoveUnderwater : MonoBehaviour
     [SerializeField] public float movementForce;
 
     private Vector2 moveDirection;
+    private bool isFacingLeft = true;
 
     // Dash kokeilu 
     private bool canDash = true;
@@ -50,7 +51,23 @@ public class PlayerMoveUnderwater : MonoBehaviour
         rb.AddForce(new Vector2(moveDirection.x * movementForce, moveDirection.y * movementForce));
         // rb.AddForce(moveDirection * movementForce); is the same as above -_- damn ChatGPT
         
-    } 
+    }
+    public void Flip()
+    {
+        isFacingLeft = !isFacingLeft;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;
+    }
+
+    // Method that checks and changes the direction of the player if needed
+    void CheckAndFlipDirection()
+    {
+        if ((moveDirection.x < 0 && !isFacingLeft) || (moveDirection.x > 0 && isFacingLeft))
+        {
+            Flip();
+        }
+    }
 
     private IEnumerator Dash()
     {
@@ -88,6 +105,7 @@ public class PlayerMoveUnderwater : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        CheckAndFlipDirection();
     }
 
     private void OnTriggerEnter2D(Collider2D other)

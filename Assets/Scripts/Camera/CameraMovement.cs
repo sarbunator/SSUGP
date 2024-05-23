@@ -33,6 +33,11 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
+        
+    }
+
+    private void FixedUpdate()
+    {
         CameraPosition();
     }
 }
