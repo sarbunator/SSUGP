@@ -1365,6 +1365,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1856058406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7248697835964883728, guid: b7565307ac28a8f4cb4af76c8473afb1, type: 3}
+  m_PrefabInstance: {fileID: 7557853147509173041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1856058408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856058406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb17f2293b9b8043a5bbdcb87c9aacf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkProjectilePrefab: {fileID: 8301883869739404026, guid: 6d80a40b56ea07146aa12ce09a34fc5f, type: 3}
+  inkCloudPrefab: {fileID: 6643285277035182582, guid: d538051305bb0d647ba917ace4488222, type: 3}
+  projectileSpeed: 5
+  maxProjectileDistance: 6
 --- !u!1 &2032588340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5743591663524763481, guid: 583dd53d79bf8474f9b594018363e867, type: 3}
@@ -1863,7 +1884,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7248697835964883728, guid: b7565307ac28a8f4cb4af76c8473afb1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1856058408}
   m_SourcePrefab: {fileID: 100100000, guid: b7565307ac28a8f4cb4af76c8473afb1, type: 3}
 --- !u!1 &7901191867351746830 stripped
 GameObject:
