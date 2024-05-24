@@ -172,6 +172,8 @@ MonoBehaviour:
   - {fileID: 7901191867351746830}
   - {fileID: 2032588340}
   - {fileID: 92547338}
+  minSpawnInterval: 1
+  maxSpawnInterval: 3
 --- !u!1 &50359664
 GameObject:
   m_ObjectHideFlags: 0
