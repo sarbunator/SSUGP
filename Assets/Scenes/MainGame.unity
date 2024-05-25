@@ -164,7 +164,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6432639}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3cf26891be11d443aae08ea788ea3f4, type: 3}
+  m_Script: {fileID: 11500000, guid: c687ea720436a5843a3aec4c2798f702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pos: {fileID: 730194948}
@@ -172,8 +172,13 @@ MonoBehaviour:
   - {fileID: 7901191867351746830}
   - {fileID: 2032588340}
   - {fileID: 92547338}
+  spawnWeights:
+  - 3
+  - 2
+  - 1
   minSpawnInterval: 1
   maxSpawnInterval: 3
+  spawnRange: {x: 4, y: 4, z: 0}
 --- !u!1 &50359664
 GameObject:
   m_ObjectHideFlags: 0
