@@ -42,7 +42,7 @@ public class InkShooting : MonoBehaviour
         {
             inkBullet.transform.position +=(Vector3)(projectileSpeed * Time.deltaTime * shootDirection);
 
-            if(Vector2.Distance(playerPosition, inkBullet.transform.position) >= maxProjectileDistance)
+            if(Vector2.Distance(playerPosition, inkBullet.transform.position) >= maxProjectileDistance)  // In here -> Need to add the condition of collision => resulting "ExplodeInk"
             {
                 ExplodeInk(); // If the ink flies too far it automatically explodes.
             }
@@ -58,12 +58,13 @@ public class InkShooting : MonoBehaviour
         Destroy(inkBullet);
     }
 
-
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.tag != "Player")
+        {
+            ExplodeInk();
+        }
     }
-
 
     void Update()
     {
