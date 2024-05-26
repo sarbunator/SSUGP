@@ -50,9 +50,9 @@ public class InkShooting : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Painoit secondary nappulaa");
+            Instantiate(inkSecondaryFireCloudPrefab, transform.position, transform.rotation);
         }
     }
 

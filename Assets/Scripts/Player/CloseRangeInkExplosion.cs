@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InkExplosion : MonoBehaviour
+public class CloseRangeInkExplosion : MonoBehaviour
 {
     public int waitTime;
     public float fadingTime;
 
     private Material material;
-
 
     void Start()
     {
@@ -21,7 +20,7 @@ public class InkExplosion : MonoBehaviour
         float startAlpha = material.color.a;
         float time = 0;
         yield return new WaitForSeconds(waitTime);
-       
+
 
         while (time < fadingTime)
         {
@@ -40,11 +39,6 @@ public class InkExplosion : MonoBehaviour
 
 
     void Update()
-    {
-      
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
     {
         
     }
