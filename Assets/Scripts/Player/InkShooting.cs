@@ -10,7 +10,7 @@ public class InkShooting : MonoBehaviour
     public float projectileSpeed;  
     public float maxProjectileDistance;
 
-    public GameObject inkSecondaryFireCloudPrefab;  // has not been added yet. maybe bigger version of the inkCloud?
+    public GameObject inkSecondaryFireCloudPrefab;
 
     private GameObject inkBullet;
     private Vector2 shootDirection;
@@ -44,13 +44,13 @@ public class InkShooting : MonoBehaviour
         {
             inkBullet.transform.position +=(Vector3)(projectileSpeed * Time.deltaTime * shootDirection);
 
-            if(Vector2.Distance(playerPosition, inkBullet.transform.position) >= maxProjectileDistance)  // In here -> Need to add the condition of collision => resulting "ExplodeInk"
+            if(Vector2.Distance(playerPosition, inkBullet.transform.position) >= maxProjectileDistance)
             {
                 ExplodeInk(); // If the ink flies too far it automatically explodes.
             }
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)) // Need to add more here. Cooldown etc.
         {
             Instantiate(inkSecondaryFireCloudPrefab, transform.position, transform.rotation);
         }
