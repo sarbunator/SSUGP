@@ -4,11 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Pearl_1
-  - Pearl_2
-  - Pearl_3
   - InkBottle
   - HealthPotion
+  - Collectable
+  - Pearl_White
+  - Pearl_Purple
+  - Pearl_Golden
+  - Pearl_1
   layers:
   - Default
   - TransparentFX

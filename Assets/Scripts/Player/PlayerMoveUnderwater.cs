@@ -110,10 +110,20 @@ public class PlayerMoveUnderwater : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Pearl_1"))
+        if (other.gameObject.CompareTag("Pearl_White"))
         {
             Destroy(other.gameObject);
-            pm.pointCount++;
+            pm.pointCount+=1;
+        }
+        if (other.gameObject.CompareTag("Pearl_Purple"))
+        {
+            Destroy(other.gameObject);
+            pm.pointCount +=5;
+        }
+        if (other.gameObject.CompareTag("Pearl_Golden"))
+        {
+            Destroy(other.gameObject);
+            pm.pointCount+=25;
         }
     }
         
