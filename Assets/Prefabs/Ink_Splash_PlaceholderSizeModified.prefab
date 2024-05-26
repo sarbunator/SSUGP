@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2022982626853642159}
   - component: {fileID: 5585522678335622919}
   - component: {fileID: 6024974991973889966}
+  - component: {fileID: 3059126084975271160}
   m_Layer: 0
   m_Name: Ink_Splash_PlaceholderSizeModified
   m_TagString: Untagged
@@ -120,3 +121,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
+--- !u!114 &3059126084975271160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643285277035182582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e4204be4f27ab439064ed2a48929c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitTime: 2
+  fadingTime: 5

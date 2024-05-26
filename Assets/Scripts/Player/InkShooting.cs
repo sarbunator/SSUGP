@@ -10,6 +10,8 @@ public class InkShooting : MonoBehaviour
     public float projectileSpeed;  
     public float maxProjectileDistance;
 
+    public GameObject inkSecondaryFireCloudPrefab;  // has not been added yet. maybe bigger version of the inkCloud?
+
     private GameObject inkBullet;
     private Vector2 shootDirection;
     private bool isShooting = false;
@@ -46,6 +48,11 @@ public class InkShooting : MonoBehaviour
             {
                 ExplodeInk(); // If the ink flies too far it automatically explodes.
             }
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            Debug.Log("Painoit secondary nappulaa");
         }
     }
 

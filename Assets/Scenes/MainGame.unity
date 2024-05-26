@@ -1800,6 +1800,7 @@ MonoBehaviour:
   inkCloudPrefab: {fileID: 6643285277035182582, guid: d538051305bb0d647ba917ace4488222, type: 3}
   projectileSpeed: 5
   maxProjectileDistance: 6
+  inkSecondaryFireCloudPrefab: {fileID: 0}
 --- !u!1 &2032588340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5743591663524763481, guid: 583dd53d79bf8474f9b594018363e867, type: 3}
