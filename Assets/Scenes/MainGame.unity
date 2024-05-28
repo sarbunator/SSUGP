@@ -2343,11 +2343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5251868916936141254, guid: 02620bd3229f98547b13baf11f9b428a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5251868916936141254, guid: 02620bd3229f98547b13baf11f9b428a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.163
       objectReference: {fileID: 0}
     - target: {fileID: 5251868916936141254, guid: 02620bd3229f98547b13baf11f9b428a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2359,15 +2359,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5251868916936141254, guid: 02620bd3229f98547b13baf11f9b428a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5251868916936141254, guid: 02620bd3229f98547b13baf11f9b428a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5251868916936141254, guid: 02620bd3229f98547b13baf11f9b428a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5251868916936141254, guid: 02620bd3229f98547b13baf11f9b428a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2474,9 +2474,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7532651246306205881, guid: 02620bd3229f98547b13baf11f9b428a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1431740552}
-    - targetCorrespondingSourceObject: {fileID: 7532651246306205881, guid: 02620bd3229f98547b13baf11f9b428a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1431740553}
     - targetCorrespondingSourceObject: {fileID: 7532651246306205881, guid: 02620bd3229f98547b13baf11f9b428a, type: 3}
       insertIndex: -1
@@ -2493,24 +2490,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7532651246306205881, guid: 02620bd3229f98547b13baf11f9b428a, type: 3}
   m_PrefabInstance: {fileID: 1431740549}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1431740552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431740550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097b551f2844b054290f18a39bf892e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Solvers:
-  - {fileID: 0}
-  m_Weight: 1
-  m_SolverEditorData:
-  - color: {r: 0, g: 1, b: 0, a: 1}
-    showGizmo: 1
 --- !u!95 &1431740553
 Animator:
   serializedVersion: 5
@@ -3560,6 +3539,10 @@ PrefabInstance:
     - target: {fileID: 5668918052589711696, guid: b7565307ac28a8f4cb4af76c8473afb1, type: 3}
       propertyPath: m_Name
       value: Squid
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668918052589711696, guid: b7565307ac28a8f4cb4af76c8473afb1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9146401663102592149, guid: b7565307ac28a8f4cb4af76c8473afb1, type: 3}
       propertyPath: m_LocalPosition.x
