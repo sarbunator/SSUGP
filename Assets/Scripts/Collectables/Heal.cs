@@ -1,19 +1,27 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-//public class Heal : MonoBehaviour
-//{
-//    public int healthRestore = 20;
+public class Heal : MonoBehaviour
+{
+    public PlayerHealth pHealth;
+    public float heal;
+    void Start()
+    {
 
-//    void Start()
-//    {
-        
-//    }
+    }
 
-//    private void OnTriggerEnter2D(Collider2D collision)
-//    {
-//        Damageable damageable = collision.GetComponent<>
-//    }
+    void Update()
+    {
 
-//}
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            pHealth.health += heal;
+            Destroy(gameObject);
+        }
+    }
+}
