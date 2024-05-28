@@ -60,9 +60,13 @@ public class InkShooting : MonoBehaviour
     {
         isShooting = false;
         
-        Instantiate(inkCloudPrefab, inkBullet.transform.position, Quaternion.identity);
+        if(inkBullet != null)
+        {
+            Instantiate(inkCloudPrefab, inkBullet.transform.position, Quaternion.identity);
 
-        Destroy(inkBullet);
+            Destroy(inkBullet);
+        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
