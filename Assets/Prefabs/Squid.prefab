@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7621888846946964318}
   - component: {fileID: 120471281406003359}
   - component: {fileID: 1622903732749573598}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Squid
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -319,7 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9041274669242608433}
   - component: {fileID: 5445251848053115728}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: InkShootPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5823154299108341740}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RotationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
