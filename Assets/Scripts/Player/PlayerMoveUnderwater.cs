@@ -7,6 +7,7 @@ public class PlayerMoveUnderwater : MonoBehaviour
 {
 
     public Rigidbody2D rb;
+    public Animator animator;
 
     [SerializeField] public float movementForce;
 
