@@ -2385,6 +2385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Octopus_New
       objectReference: {fileID: 0}
+    - target: {fileID: 3932254648849203030, guid: 1720298a07fddc2478247f7208b48a3e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6506496237723187280, guid: 1720298a07fddc2478247f7208b48a3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3669,7 +3673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2710883584037366780, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2954179066409984027, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: m_LocalPosition.x
