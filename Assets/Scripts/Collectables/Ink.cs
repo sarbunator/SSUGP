@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Ink : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public PlayerInkAmmo pInkAmmo;
+    public float ink;
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            pInkAmmo.ink += ink;
+            Destroy(gameObject);
+        }
     }
 }

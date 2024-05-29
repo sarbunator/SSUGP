@@ -1,32 +1,27 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class InkBottleSpawner : MonoBehaviour
+public class ObjectSpawner : MonoBehaviour
 {
-    public Transform pos; // The position where objects will be spawned
-    public GameObject[] objectsToInstantiate; // Array of objects to spawn
-    public float[] spawnWeights; // Array of weights for each object
-    public float minSpawnInterval = 1f; // Minimum time between spawns
-    public float maxSpawnInterval = 3f; // Maximum time between spawns
-    public Vector3 spawnRange; // Range within which to randomly spawn objects
+    public Vector3[] spawnPoints; // Array of predefined spawn points (positions)
+    public GameObject objectToSpawn; // The object to spawn
+    public int maxActiveObjects = 5; // Maximum number of active objects at a time
+    public float spawnInterval = 5f; // Time interval between spawns
+
+    private List<GameObject> activeObjects = new List<GameObject>(); // List of currently active objects
 
     void Start()
     {
-        if (pos == null)
+        if (spawnPoints.Length != 10)
         {
-            Debug.LogError("Position Transform not assigned.");
+            Debug.LogError("There should be exactly 10 spawn points.");
             return;
         }
 
-        if (objectsToInstantiate == null || objectsToInstantiate.Length == 0)
+        if (objectToSpawn == null)
         {
-            Debug.LogError("Objects to instantiate not assigned or empty.");
-            return;
-        }
-
-        if (spawnWeights == null || spawnWeights.Length != objectsToInstantiate.Length)
-        {
-            Debug.LogError("Spawn weights not assigned or not matching the number of objects.");
+            Debug.LogError("Object to spawn is not assigned.");
             return;
         }
 
@@ -37,59 +32,32 @@ public class InkBottleSpawner : MonoBehaviour
     {
         while (true)
         {
-            InstantiateObject();
-            float randomInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
-            yield return new WaitForSeconds(randomInterval);
-        }
-    }
-
-    private void InstantiateObject()
-    {
-        if (objectsToInstantiate == null || objectsToInstantiate.Length == 0)
-        {
-            Debug.LogError("Objects to instantiate array is null or empty during runtime.");
-            return;
-        }
-
-        int selectedIndex = GetWeightedRandomIndex();
-
-        if (objectsToInstantiate[selectedIndex] == null)
-        {
-            Debug.LogError($"Object at index {selectedIndex} is null.");
-            return;
-        }
-
-        Vector3 randomOffset = new Vector3(
-            Random.Range(-spawnRange.x, spawnRange.x),
-            Random.Range(-spawnRange.y, spawnRange.y),
-            Random.Range(-spawnRange.z, spawnRange.z)
-        );
-
-        Vector3 spawnPosition = pos.position + randomOffset;
-        Instantiate(objectsToInstantiate[selectedIndex], spawnPosition, objectsToInstantiate[selectedIndex].transform.rotation);
-    }
-
-    private int GetWeightedRandomIndex()
-    {
-        float totalWeight = 0;
-        for (int i = 0; i < spawnWeights.Length; i++)
-        {
-            totalWeight += spawnWeights[i];
-        }
-
-        float randomValue = Random.Range(0, totalWeight);
-        float cumulativeWeight = 0;
-
-        for (int i = 0; i < spawnWeights.Length; i++)
-        {
-            cumulativeWeight += spawnWeights[i];
-            if (randomValue < cumulativeWeight)
+            if (activeObjects.Count < maxActiveObjects)
             {
-                return i;
+                SpawnObject();
             }
+            yield return new WaitForSeconds(spawnInterval);
         }
+    }
 
-        // Fallback, should not reach here if weights are positive
-        return 0;
+    private void SpawnObject()
+    {
+        Vector3 randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        GameObject spawnedObject = Instantiate(objectToSpawn, randomSpawnPoint, Quaternion.identity);
+        activeObjects.Add(spawnedObject);
+
+        // Subscribe to the object's destruction event
+        DestroyableObject destroyable = spawnedObject.GetComponent<DestroyableObject>();
+        if (destroyable != null)
+        {
+            destroyable.OnDestroyed += () => HandleObjectDestroyed(spawnedObject);
+        }
+    }
+
+    private void HandleObjectDestroyed(GameObject destroyedObject)
+    {
+        activeObjects.Remove(destroyedObject);
     }
 }
+
+

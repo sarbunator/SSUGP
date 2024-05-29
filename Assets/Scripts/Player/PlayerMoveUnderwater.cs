@@ -109,6 +109,8 @@ public class PlayerMoveUnderwater : MonoBehaviour
         CheckAndFlipDirection();
     }
 
+
+    // Collectables OnTrigger Destroying
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Pearl_White"))
@@ -125,6 +127,10 @@ public class PlayerMoveUnderwater : MonoBehaviour
         {
             Destroy(other.gameObject);
             pm.pointCount+=25;
+        }
+        if (other.gameObject.CompareTag("Healing_Potion"))
+        {
+            Destroy(other.gameObject);
         }
     }
         
