@@ -41,6 +41,9 @@ public class PlayerMoveUnderwater : MonoBehaviour
             StartCoroutine(Dash());
         }
 
+        bool isMoving = moveDirection != Vector2.zero;
+        animator.SetBool("isMoving", isMoving);
+
     }
 
     //          ******* Dashing script guide *******
