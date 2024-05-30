@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class HealingPotionSpawner : MonoBehaviour
 {
+    public Transform pos; // The position where objects will be spawned
     public Vector3[] spawnPoints; // Array of predefined spawn points
-    public GameObject healingPotionPrefab; // The heal pot prefab
-    public int maxActivePotions = 10; // Max number of active pots at a time
+    public GameObject healingPotionPrefab; // The healing potion prefab
+    public int maxActivePotions = 10; // Max number of active potions at a time
     public float spawnInterval = 5f; // Time interval between spawns
 
-    private List<GameObject> activePotions = new List<GameObject>(); // List of currently active heal pots
+    private List<GameObject> activePotions = new List<GameObject>(); // List of currently active healing potions
+    private bool isSpawningActive = false;
 
     void Start()
     {
@@ -25,25 +27,52 @@ public class HealingPotionSpawner : MonoBehaviour
             return;
         }
 
-        StartCoroutine(SpawnPotions());
+        // Spawn a potion at each spawn point at the start
+        foreach (Vector3 spawnPoint in spawnPoints)
+        {
+            SpawnPotionAtPosition(spawnPoint);
+        }
+    }
+
+    void Update()
+    {
+        // Clean up the activePotions list by removing null references
+        activePotions.RemoveAll(potion => potion == null);
+
+        if (!isSpawningActive && activePotions.Count < maxActivePotions)
+        {
+            StartCoroutine(SpawnPotions());
+        }
     }
 
     IEnumerator SpawnPotions()
     {
-        while (true)
+        isSpawningActive = true;
+
+        while (activePotions.Count < maxActivePotions)
         {
-            if (activePotions.Count < maxActivePotions)
-            {
-                SpawnPotion();
-            }
+            // Wait until a potion is collected before starting the timer
+            yield return new WaitUntil(() => activePotions.Count < maxActivePotions);
+
+            // Wait for the spawn interval
             yield return new WaitForSeconds(spawnInterval);
+
+            // Spawn a new potion
+            SpawnPotion();
         }
+
+        isSpawningActive = false;
     }
 
     private void SpawnPotion()
     {
         Vector3 randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        GameObject spawnedPotion = Instantiate(healingPotionPrefab, randomSpawnPoint, Quaternion.identity);
+        SpawnPotionAtPosition(randomSpawnPoint);
+    }
+
+    private void SpawnPotionAtPosition(Vector3 position)
+    {
+        GameObject spawnedPotion = Instantiate(healingPotionPrefab, position, Quaternion.identity);
         activePotions.Add(spawnedPotion);
     }
 }

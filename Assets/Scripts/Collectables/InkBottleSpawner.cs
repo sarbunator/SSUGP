@@ -2,62 +2,77 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSpawner : MonoBehaviour
+public class InkBottleSpawner : MonoBehaviour
 {
-    public Vector3[] spawnPoints; // Array of predefined spawn points (positions)
-    public GameObject objectToSpawn; // The object to spawn
-    public int maxActiveObjects = 5; // Maximum number of active objects at a time
+    public Transform pos; // The position where objects will be spawned
+    public Vector3[] spawnPoints; // Array of predefined spawn points
+    public GameObject inkbottlePrefab; // The healing potion prefab
+    public int maxActivePotions = 10; // Max number of active potions at a time
     public float spawnInterval = 5f; // Time interval between spawns
 
-    private List<GameObject> activeObjects = new List<GameObject>(); // List of currently active objects
+    private List<GameObject> activePotions = new List<GameObject>(); // List of currently active healing potions
+    private bool isSpawningActive = false;
 
     void Start()
     {
-        if (spawnPoints.Length != 10)
+        if (spawnPoints.Length == 0)
         {
-            Debug.LogError("There should be exactly 10 spawn points.");
+            Debug.LogError("No spawn points assigned.");
             return;
         }
 
-        if (objectToSpawn == null)
+        if (inkbottlePrefab == null)
         {
-            Debug.LogError("Object to spawn is not assigned.");
+            Debug.LogError("Healing potion prefab not assigned.");
             return;
         }
 
-        StartCoroutine(SpawnObjects());
+        // Spawn a potion at each spawn point at the start
+        foreach (Vector3 spawnPoint in spawnPoints)
+        {
+            SpawnPotionAtPosition(spawnPoint);
+        }
     }
 
-    IEnumerator SpawnObjects()
+    void Update()
     {
-        while (true)
+        // Clean up the activePotions list by removing null references
+        activePotions.RemoveAll(potion => potion == null);
+
+        if (!isSpawningActive && activePotions.Count < maxActivePotions)
         {
-            if (activeObjects.Count < maxActiveObjects)
-            {
-                SpawnObject();
-            }
-            yield return new WaitForSeconds(spawnInterval);
+            StartCoroutine(SpawnPotions());
         }
     }
 
-    private void SpawnObject()
+    IEnumerator SpawnPotions()
+    {
+        isSpawningActive = true;
+
+        while (activePotions.Count < maxActivePotions)
+        {
+            // Wait until a potion is collected before starting the timer
+            yield return new WaitUntil(() => activePotions.Count < maxActivePotions);
+
+            // Wait for the spawn interval
+            yield return new WaitForSeconds(spawnInterval);
+
+            // Spawn a new potion
+            SpawnPotion();
+        }
+
+        isSpawningActive = false;
+    }
+
+    private void SpawnPotion()
     {
         Vector3 randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        GameObject spawnedObject = Instantiate(objectToSpawn, randomSpawnPoint, Quaternion.identity);
-        activeObjects.Add(spawnedObject);
-
-        // Subscribe to the object's destruction event
-        DestroyableObject destroyable = spawnedObject.GetComponent<DestroyableObject>();
-        if (destroyable != null)
-        {
-            destroyable.OnDestroyed += () => HandleObjectDestroyed(spawnedObject);
-        }
+        SpawnPotionAtPosition(randomSpawnPoint);
     }
 
-    private void HandleObjectDestroyed(GameObject destroyedObject)
+    private void SpawnPotionAtPosition(Vector3 position)
     {
-        activeObjects.Remove(destroyedObject);
+        GameObject spawnedPotion = Instantiate(inkbottlePrefab, position, Quaternion.identity);
+        activePotions.Add(spawnedPotion);
     }
 }
-
-
