@@ -81,10 +81,12 @@ public class PlayerMoveUnderwater : MonoBehaviour
         rb.gravityScale = 0f;
         rb.AddForce(moveDirection * dashingPower * movementForce);
         tr.emitting = true;
+        animator.SetBool("isDashing", isDashing);
         yield return new WaitForSeconds(dashingTime);
         tr.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
+        animator.SetBool("isDashing", isDashing);
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
