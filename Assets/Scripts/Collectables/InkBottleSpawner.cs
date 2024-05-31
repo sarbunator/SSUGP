@@ -7,28 +7,14 @@ public class InkBottleSpawner : MonoBehaviour
     public Transform pos; // The position where objects will be spawned
     public Vector3[] spawnPoints; // Array of predefined spawn points
     public GameObject inkbottlePrefab; // The ink bottle prefab
-    public int maxActivePotions = 10; // Max number of active potions at a time
+    public int maxActiveBottles = 10; // Max number of active potions at a time
     public float spawnInterval = 5f; // Time interval between spawns
-
-    private List<GameObject> activePotions = new List<GameObject>(); // List of currently active ink bottles
+    private List<GameObject> activeBottles = new List<GameObject>(); // List of currently active ink bottles
     private bool isSpawningActive = false;
 
     void Start()
     {
-        if (spawnPoints.Length == 0)
-        {
-            Debug.LogError("No spawn points assigned.");
-            return;
-        }
-
-        if (inkbottlePrefab == null)
-        {
-            Debug.LogError("Ink Bottle prefab not assigned.");
-            return;
-        }
-
-        // Spawn a potion at each spawn point at the start
-        foreach (Vector3 spawnPoint in spawnPoints)
+        foreach (Vector3 spawnPoint in spawnPoints)  // Spawn a potion at each spawn point at the start
         {
             SpawnPotionAtPosition(spawnPoint);
         }
@@ -36,31 +22,22 @@ public class InkBottleSpawner : MonoBehaviour
 
     void Update()
     {
-        // Clean up the activePotions list by removing null references
-        activePotions.RemoveAll(potion => potion == null);
-
-        if (!isSpawningActive && activePotions.Count < maxActivePotions)
+        activeBottles.RemoveAll(potion => potion == null);  // Clean up the activeBottles list by removing null references
+        if (!isSpawningActive && activeBottles.Count < maxActiveBottles)
         {
-            StartCoroutine(SpawnPotions());
+            StartCoroutine(SpawnBottles());
         }
     }
 
-    IEnumerator SpawnPotions()
+    IEnumerator SpawnBottles()
     {
         isSpawningActive = true;
-
-        while (activePotions.Count < maxActivePotions)
+        while (activeBottles.Count < maxActiveBottles)
         {
-            // Wait until a potion is collected before starting the timer
-            yield return new WaitUntil(() => activePotions.Count < maxActivePotions);
-
-            // Wait for the spawn interval
-            yield return new WaitForSeconds(spawnInterval);
-
-            // Spawn a new potion
-            SpawnPotion();
+            yield return new WaitUntil(() => activeBottles.Count < maxActiveBottles);    // wait until a bottle is collected before starting the timer
+            yield return new WaitForSeconds(spawnInterval);  // wait for the spawn interval
+            SpawnPotion(); // spawn a new bottle
         }
-
         isSpawningActive = false;
     }
 
@@ -73,6 +50,6 @@ public class InkBottleSpawner : MonoBehaviour
     private void SpawnPotionAtPosition(Vector3 position)
     {
         GameObject spawnedPotion = Instantiate(inkbottlePrefab, position, Quaternion.identity);
-        activePotions.Add(spawnedPotion);
+        activeBottles.Add(spawnedPotion);
     }
 }
