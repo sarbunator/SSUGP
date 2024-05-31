@@ -164,8 +164,8 @@ MonoBehaviour:
   rb: {fileID: 5980123501804308684}
   animator: {fileID: 2947475719858184393}
   movementForce: 25
-  dashingPower: 15
-  dashingTime: 0.25
+  dashingPower: 30
+  dashingTime: 0.5
   dashingCooldown: 1
   tr: {fileID: 8805556784580226079}
   pm: {fileID: 0}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2710883584037366780}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2850d965ff0a61a4597aa9d8191a4b0a, type: 3}
   m_Name: 
