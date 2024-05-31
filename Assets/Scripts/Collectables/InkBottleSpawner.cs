@@ -6,11 +6,11 @@ public class InkBottleSpawner : MonoBehaviour
 {
     public Transform pos; // The position where objects will be spawned
     public Vector3[] spawnPoints; // Array of predefined spawn points
-    public GameObject inkbottlePrefab; // The healing potion prefab
+    public GameObject inkbottlePrefab; // The ink bottle prefab
     public int maxActivePotions = 10; // Max number of active potions at a time
     public float spawnInterval = 5f; // Time interval between spawns
 
-    private List<GameObject> activePotions = new List<GameObject>(); // List of currently active healing potions
+    private List<GameObject> activePotions = new List<GameObject>(); // List of currently active ink bottles
     private bool isSpawningActive = false;
 
     void Start()
@@ -23,7 +23,7 @@ public class InkBottleSpawner : MonoBehaviour
 
         if (inkbottlePrefab == null)
         {
-            Debug.LogError("Healing potion prefab not assigned.");
+            Debug.LogError("Ink Bottle prefab not assigned.");
             return;
         }
 

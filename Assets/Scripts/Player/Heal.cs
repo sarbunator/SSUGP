@@ -4,24 +4,20 @@ using UnityEngine;
 
 public class Heal : MonoBehaviour
 {
-    public PlayerHealth pHealth;
-    public float heal;
-    void Start()
-    {
+    public float healAmount; 
 
-    }
-
-    void Update()
-    {
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            pHealth.health += heal;
-            Destroy(gameObject);
+            PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+
+            if (playerHealth != null)
+            {
+                playerHealth.health += healAmount;
+                playerHealth.health = Mathf.Clamp(playerHealth.health, 0, playerHealth.maxHealth);
+                Destroy(gameObject);
+            }
         }
     }
-}
+}   
