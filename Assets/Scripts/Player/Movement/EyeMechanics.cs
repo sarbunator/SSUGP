@@ -40,13 +40,8 @@ public class EyeMechanics : MonoBehaviour
             case 2:
                 spriteRenderer.sprite = irisHappy;
                 break;
-                default: // this can be removed if it works properly
-                Debug.LogError("Something went wrong with the sprite");
-                break;
         }
     }
-
-
 
     IEnumerator Angry()
     {
@@ -58,10 +53,6 @@ public class EyeMechanics : MonoBehaviour
         expressionAngry.enabled = false;
         
     }
-    public void StartHappyCoroutine()
-    {
-        StartCoroutine(Happy());
-    }
 
     IEnumerator Happy()
     {
@@ -71,26 +62,18 @@ public class EyeMechanics : MonoBehaviour
         expressionHappy.enabled = false;
         SpriteChangeIris(0);
     }
-
-
-    //  SetSprite(0); // change to original sprite
-    //  SetSprite(1); // change to angry sprite
-    //  SetSprite(2); // change to happy sprite
-
-    
-    
+    public void StartHappyCoroutine()
+    {
+        StartCoroutine(Happy());
+    }
 
     public void ExpressionLogistic()
     {
         if (Input.GetMouseButtonDown(0))
         {
             StartCoroutine(Angry());
-        }
-        
+        }   
     }
-
-
-
 
     void Update()
     {

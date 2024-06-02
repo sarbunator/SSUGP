@@ -73,7 +73,6 @@ public class InkShooting : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            print("osuu kait");
             ExplodeInk();
         }
     }
