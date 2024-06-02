@@ -23,6 +23,9 @@ public class PlayerMoveUnderwater : MonoBehaviour
 
     [SerializeField] private TrailRenderer tr;
 
+    public EyeMechanics eyeMechanics;
+
+
     public PointManager pm;
     void ProcessInputs()
     {
@@ -122,19 +125,23 @@ public class PlayerMoveUnderwater : MonoBehaviour
         {
             Destroy(other.gameObject);
             pm.pointCount+=1;
+            eyeMechanics.StartHappyCoroutine();
         }
         if (other.gameObject.CompareTag("Pearl_Purple"))
         {
             Destroy(other.gameObject);
             pm.pointCount +=5;
+            eyeMechanics.StartHappyCoroutine();
         }
         if (other.gameObject.CompareTag("Pearl_Golden"))
         {
             Destroy(other.gameObject);
             pm.pointCount+=25;
+            eyeMechanics.StartHappyCoroutine();
         }
         if (other.gameObject.CompareTag("Healing_Potion"))
         {
+            eyeMechanics.StartHappyCoroutine();
             Destroy(other.gameObject);
         }
     }
