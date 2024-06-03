@@ -144,6 +144,11 @@ public class PlayerMoveUnderwater : MonoBehaviour
             eyeMechanics.StartHappyCoroutine();
             Destroy(other.gameObject);
         }
+        if (other.gameObject.CompareTag("InkBottle"))
+        {
+            eyeMechanics.StartHappyCoroutine();
+            Destroy(other.gameObject);
+        }
     }
         
 }

@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class InkBottleSpawner : MonoBehaviour
 {
-    public Transform pos; // The position where objects will be spawned
-    public Vector3[] spawnPoints; // Array of predefined spawn points
-    public GameObject inkbottlePrefab; // The ink bottle prefab
-    public int maxActiveBottles = 10; // Max number of active potions at a time
-    public float spawnInterval = 5f; // Time interval between spawns
-    private List<GameObject> activeBottles = new List<GameObject>(); // List of currently active ink bottles
+    public Transform pos;
+    public Vector3[] spawnPoints;
+    public GameObject inkbottlePrefab;
+    public int maxActiveBottles = 10;
+    public float spawnInterval = 5f;
+    private List<GameObject> activeBottles = new List<GameObject>();
     private bool isSpawningActive = false;
 
     void Start()
     {
-        foreach (Vector3 spawnPoint in spawnPoints)  // Spawn a potion at each spawn point at the start
+        foreach (Vector3 spawnPoint in spawnPoints) 
         {
             SpawnPotionAtPosition(spawnPoint);
         }
@@ -22,7 +22,7 @@ public class InkBottleSpawner : MonoBehaviour
 
     void Update()
     {
-        activeBottles.RemoveAll(potion => potion == null);  // Clean up the activeBottles list by removing null references
+        activeBottles.RemoveAll(potion => potion == null); 
         if (!isSpawningActive && activeBottles.Count < maxActiveBottles)
         {
             StartCoroutine(SpawnBottles());

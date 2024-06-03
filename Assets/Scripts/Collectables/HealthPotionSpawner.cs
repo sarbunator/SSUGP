@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class HealingPotionSpawner : MonoBehaviour
 {
-    public Transform pos; // The position where objects will be spawned
-    public Vector3[] spawnPoints; // Array of predefined spawn points
-    public GameObject healingPotionPrefab; // The healing potion prefab
-    public int maxActivePotions = 10; // Max number of active potions at a time
-    public float spawnInterval = 5f; // Time interval between spawns
+    public Transform pos; // spawn position
+    public Vector3[] spawnPoints; // predefined spawn points
+    public GameObject healingPotionPrefab;
+    public int maxActivePotions = 10;
+    public float spawnInterval = 5f; // time interval between spawns
 
-    private List<GameObject> activePotions = new List<GameObject>(); // List of currently active healing potions
+    private List<GameObject> activePotions = new List<GameObject>(); // list of currently active healing potions
     private bool isSpawningActive = false;
 
     void Start()
@@ -27,7 +27,7 @@ public class HealingPotionSpawner : MonoBehaviour
             return;
         }
 
-        // Spawn a potion at each spawn point at the start
+        // spawn a potion at each spawn point at the start
         foreach (Vector3 spawnPoint in spawnPoints)
         {
             SpawnPotionAtPosition(spawnPoint);
@@ -36,7 +36,7 @@ public class HealingPotionSpawner : MonoBehaviour
 
     void Update()
     {
-        // Clean up the activePotions list by removing null references
+        // clean up the activePotions list by removing null references
         activePotions.RemoveAll(potion => potion == null);
 
         if (!isSpawningActive && activePotions.Count < maxActivePotions)
@@ -51,13 +51,13 @@ public class HealingPotionSpawner : MonoBehaviour
 
         while (activePotions.Count < maxActivePotions)
         {
-            // Wait until a potion is collected before starting the timer
+            // wait until a potion is collected before starting the timer
             yield return new WaitUntil(() => activePotions.Count < maxActivePotions);
 
-            // Wait for the spawn interval
+            // wait for the spawn interval
             yield return new WaitForSeconds(spawnInterval);
 
-            // Spawn a new potion
+            // spawn a new potion
             SpawnPotion();
         }
 
