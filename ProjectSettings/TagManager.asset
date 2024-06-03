@@ -10,8 +10,10 @@ TagManager:
   - Pearl_Golden
   - Ground
   - Healing_Potion
-  - Ink_Bottle
   - InkBottle
+  - Shark_1
+  - Shark_2
+  - Shark_3
   layers:
   - Default
   - TransparentFX
