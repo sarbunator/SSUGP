@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 1562341}
   - component: {fileID: 1562343}
   - component: {fileID: 1562342}
+  - component: {fileID: 1562344}
   m_Layer: 5
   m_Name: InkMeter
   m_TagString: Untagged
@@ -198,6 +199,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562340}
   m_CullTransparentMesh: 1
+--- !u!114 &1562344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33697ff96929b2c42a89ae2d522870c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkMeterImage: {fileID: 1562342}
 --- !u!1 &6432639
 GameObject:
   m_ObjectHideFlags: 0
@@ -6829,6 +6843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2139209149}
   - component: {fileID: 2139209150}
+  - component: {fileID: 2139209151}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6865,6 +6880,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointCount: 0
   pointText: {fileID: 348509295}
+--- !u!114 &2139209151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139209148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3e67bb025658445ac4e5610f551cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkCount: 10
+  maxInkCount: 10
 --- !u!1001 &257479814193003354
 PrefabInstance:
   m_ObjectHideFlags: 0

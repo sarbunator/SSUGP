@@ -20,13 +20,17 @@ public class InkShooting : MonoBehaviour
 
     void ShootInk()
     {
-        isShooting = true;
+        if (GameManager.Instance.UseInk()) // check if there's enough ink to shoot
+        {
 
-        inkBullet = Instantiate(inkProjectilePrefab, transform.position, Quaternion.identity);
-        playerPosition = inkBullet.transform.position;
+            isShooting = true;
 
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        shootDirection = ((Vector2)(mousePosition - transform.position)).normalized;
+            inkBullet = Instantiate(inkProjectilePrefab, transform.position, Quaternion.identity);
+            playerPosition = inkBullet.transform.position;
+
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            shootDirection = ((Vector2)(mousePosition - transform.position)).normalized;
+        }
     }
  
     void ShootingControls()
