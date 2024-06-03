@@ -3,48 +3,25 @@ using UnityEngine;
 
 public class TestPearlSpawner : MonoBehaviour
 {
-    public Transform pos; // The position where objects will be spawned
-    public GameObject[] objectsToInstantiate; // Array of objects to spawn
-    public float[] spawnWeights; // Array of weights for each object
-    public float minSpawnInterval = 1f; // Minimum time between spawns
-    public float maxSpawnInterval = 3f; // Maximum time between spawns
-    public Vector3 spawnRange; // Range within which to randomly spawn objects
-    public float minDistanceFromLastSpawn = 5f; // Minimum distance from the last spawn position
-    public Transform playerTransform; // Player's Transform
-    public float minDistanceFromPlayer = 5f; // Minimum distance from the player
+    public Transform pos; // position where objects will be spawned
+    public GameObject[] objectsToInstantiate;
+    public float[] spawnWeights;
+    public float minSpawnInterval = 1f;
+    public float maxSpawnInterval = 3f;
+    public Vector3 spawnRange; // range within which to randomly spawn objects
+    public float minDistanceFromLastSpawn = 5f;
+    public Transform playerTransform;
+    public float minDistanceFromPlayer = 5f;
 
     private Vector3 lastSpawnPosition;
     private float[] cumulativeWeights;
 
     void Start()
     {
-        if (pos == null)
+        if (pos == null || objectsToInstantiate == null || objectsToInstantiate.Length == 0 ||
+            spawnWeights == null || spawnWeights.Length != objectsToInstantiate.Length ||
+            playerTransform == null || !ValidateWeights())
         {
-            Debug.LogError("Position Transform not assigned.");
-            return;
-        }
-
-        if (objectsToInstantiate == null || objectsToInstantiate.Length == 0)
-        {
-            Debug.LogError("Objects to instantiate not assigned or empty.");
-            return;
-        }
-
-        if (spawnWeights == null || spawnWeights.Length != objectsToInstantiate.Length)
-        {
-            Debug.LogError("Spawn weights not assigned or not matching the number of objects.");
-            return;
-        }
-
-        if (playerTransform == null)
-        {
-            Debug.LogError("Player Transform not assigned.");
-            return;
-        }
-
-        if (!ValidateWeights())
-        {
-            Debug.LogError("Invalid spawn weights.");
             return;
         }
 
@@ -72,7 +49,6 @@ public class TestPearlSpawner : MonoBehaviour
         {
             if (attempt++ > 100)
             {
-                Debug.LogWarning("Could not find a suitable spawn position after 100 attempts.");
                 return;
             }
 

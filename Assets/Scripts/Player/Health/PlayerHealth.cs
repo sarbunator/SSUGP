@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // käytin MoreBBlakeyy -youtubekanavan ohjevideota:
@@ -20,5 +21,14 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+        if (health <= 0)
+        {
+            GameOver();
+        }
+    }
+
+    void GameOver()
+    {
+        SceneManager.LoadScene("GameOverScene"); // Make sure "GameOver" is the exact name of your game over scene
     }
 }

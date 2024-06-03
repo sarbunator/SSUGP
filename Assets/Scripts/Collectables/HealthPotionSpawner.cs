@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HealingPotionSpawner : MonoBehaviour
 {
-    public Transform pos; // spawn position
-    public Vector3[] spawnPoints; // predefined spawn points
+    public Transform pos;
+    public Vector3[] spawnPoints;
     public GameObject healingPotionPrefab;
     public int maxActivePotions = 10;
-    public float spawnInterval = 5f; // time interval between spawns
+    public float spawnInterval = 5f;
 
     private List<GameObject> activePotions = new List<GameObject>(); // list of currently active healing potions
     private bool isSpawningActive = false;
