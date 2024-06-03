@@ -32,6 +32,6 @@ public class GameManager : MonoBehaviour
     }
     public void RefillInk(int amount)
     {
-        inkCount = Mathf.Min(inkCount + amount, maxInkCount); // ensure ink count doesnt go over max value
+        inkCount = Mathf.Min(inkCount + amount, maxInkCount); // ensure ink count doesnt go over max
     }
 }
