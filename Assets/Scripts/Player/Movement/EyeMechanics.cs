@@ -11,12 +11,15 @@ public class EyeMechanics : MonoBehaviour
     public Sprite originalEye;
     public Sprite irisAngry;
     public Sprite irisHappy;
+    public Sprite irisSad;
 
     public SpriteRenderer expressionAngry;
     public SpriteRenderer expressionHappy;
+    public SpriteRenderer expressionSad;
 
     public float angryTime;
     public float happyTime;
+    public float sadTime;
 
     private Camera mainCamera;
     private SpriteRenderer spriteRenderer;
@@ -32,7 +35,7 @@ public class EyeMechanics : MonoBehaviour
         switch (eyeIndex)
         {
             case 0:
-                spriteRenderer.sprite = originalEye; 
+                spriteRenderer.sprite = originalEye;
                 break;
             case 1:
                 spriteRenderer.sprite = irisAngry;
@@ -40,7 +43,25 @@ public class EyeMechanics : MonoBehaviour
             case 2:
                 spriteRenderer.sprite = irisHappy;
                 break;
+            case 3:
+                spriteRenderer.sprite = irisSad;
+                break;
         }
+    }
+
+    IEnumerator Sad()
+    {
+        SpriteChangeIris(3);
+        expressionSad.enabled = true;
+        yield return new WaitForSecondsRealtime(sadTime);
+
+        SpriteChangeIris(0);
+        expressionSad.enabled = false;
+    }
+
+    public void StartSadCoroutine()
+    {
+        StartCoroutine(Sad());
     }
 
     IEnumerator Angry()
