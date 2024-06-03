@@ -818,7 +818,7 @@ Transform:
   m_GameObject: {fileID: 133662669}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.0506687, y: 1.8454188, z: -0.03206338}
+  m_LocalPosition: {x: 3.42, y: -3.27, z: -0.03206338}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2382,6 +2382,11 @@ MonoBehaviour:
   - {x: 3, y: 0, z: 0}
   - {x: 4, y: 0, z: 0}
   - {x: 5, y: 0, z: 0}
+  - {x: 6, y: 0, z: 0}
+  - {x: 7, y: 0, z: 0}
+  - {x: 8, y: 0, z: 0}
+  - {x: 9, y: 0, z: 0}
+  - {x: 10, y: 0, z: 0}
   healingPotionPrefab: {fileID: 7885311746686280679, guid: 661d2241885ac594c98c63d23e31bc1d, type: 3}
   maxActivePotions: 10
   spawnInterval: 5
@@ -2436,6 +2441,11 @@ MonoBehaviour:
   - {x: 0, y: 3, z: 0}
   - {x: 0, y: 4, z: 0}
   - {x: 0, y: 5, z: 0}
+  - {x: 0, y: 6, z: 0}
+  - {x: 0, y: 7, z: 0}
+  - {x: 0, y: 8, z: 0}
+  - {x: 0, y: 9, z: 0}
+  - {x: 0, y: 10, z: 0}
   inkbottlePrefab: {fileID: 4072100488155139854, guid: 91face678612aa24689a9cdf7db0af2f, type: 3}
   maxActiveBottles: 10
   spawnInterval: 5
@@ -7087,7 +7097,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 21
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5212450621935901368, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
