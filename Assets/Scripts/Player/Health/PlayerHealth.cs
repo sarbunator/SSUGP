@@ -13,6 +13,11 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth;
     public Image healthBar;
 
+    public float deathAnimationTime;
+    public bool isDead;
+
+    public Animator animator;
+
     void Start()
     {
         maxHealth = health;
@@ -23,8 +28,19 @@ public class PlayerHealth : MonoBehaviour
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
         if (health <= 0)
         {
-            GameOver();
+            StartCoroutine(Death());
+            //GameOver();
         }
+    }
+
+    IEnumerator Death()
+    {
+        isDead = true;
+        animator.SetBool("isDead", isDead);
+        yield return new WaitForSecondsRealtime(deathAnimationTime);
+        isDead = false;
+
+
     }
 
     void GameOver()
