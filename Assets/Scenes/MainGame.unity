@@ -1932,6 +1932,11 @@ Transform:
   - {fileID: 1136649058}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1055245256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2710883584037366780, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
+  m_PrefabInstance: {fileID: 257479814193003354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1091533497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3238571131745938498, guid: e0d9218faaae06b48ad47599aac451f8, type: 3}
@@ -6550,7 +6555,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5625961119752057004, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
   m_PrefabInstance: {fileID: 257479814193003354}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1055245256}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ada3317b440edbd439cfe95960622817, type: 3}
@@ -6561,7 +6566,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7609976430431984841, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
   m_PrefabInstance: {fileID: 257479814193003354}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1055245256}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8d701ac787beaf469bc950987006307, type: 3}
@@ -6572,6 +6577,20 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2947475719858184393, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
   m_PrefabInstance: {fileID: 257479814193003354}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2089387781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055245256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c683224ba2b631440b38ec7fb3179793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pm: {fileID: 2139209150}
+  eyeMechanics: {fileID: 2089387775}
 --- !u!114 &2139209150 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7569589840179546447, guid: d55201c8eb8a6cd45981c825de2027a2, type: 3}
@@ -6650,7 +6669,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2710883584037366780, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2089387781}
   m_SourcePrefab: {fileID: 100100000, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
 --- !u!1001 &1336378733250858509
 PrefabInstance:
