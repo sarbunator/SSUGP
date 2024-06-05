@@ -116,39 +116,5 @@ public class PlayerMoveUnderwater : MonoBehaviour
         Move();
         CheckAndFlipDirection();
     }
-
-
-    // Collectables OnTrigger Destroying
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Pearl_White"))
-        {
-            Destroy(other.gameObject);
-            pm.pointCount+=1;
-            eyeMechanics.StartHappyCoroutine();
-        }
-        if (other.gameObject.CompareTag("Pearl_Purple"))
-        {
-            Destroy(other.gameObject);
-            pm.pointCount +=5;
-            eyeMechanics.StartHappyCoroutine();
-        }
-        if (other.gameObject.CompareTag("Pearl_Golden"))
-        {
-            Destroy(other.gameObject);
-            pm.pointCount+=25;
-            eyeMechanics.StartHappyCoroutine();
-        }
-        if (other.gameObject.CompareTag("Healing_Potion"))
-        {
-            eyeMechanics.StartHappyCoroutine();
-            Destroy(other.gameObject);
-        }
-        if (other.gameObject.CompareTag("InkBottle"))
-        {
-            eyeMechanics.StartHappyCoroutine();
-            Destroy(other.gameObject);
-        }
-    }
         
 }
