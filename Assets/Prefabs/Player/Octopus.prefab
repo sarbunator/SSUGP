@@ -301,6 +301,11 @@ MonoBehaviour:
   isDead: 0
   audioDeath: {fileID: 0}
   animator: {fileID: 2947475719858184393}
+  cameraTargeting: {fileID: 0}
+  eyeMechanics: {fileID: 7609976430431984841}
+  moveUnderwater: {fileID: 6700817258356454839}
+  inkShooting: {fileID: 961137926439858316}
+  polygonCollider: {fileID: 353638783107632952}
 --- !u!60 &353638783107632952
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -409,7 +414,7 @@ MonoBehaviour:
   angryTime: 1
   happyTime: 1
   sadDead: 5
-  damagedTime: 2
+  damagedTime: 1
   playerHealth: {fileID: 5625961119752057004}
 --- !u!1 &6136064146588113415
 GameObject:

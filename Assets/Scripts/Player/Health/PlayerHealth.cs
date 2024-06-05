@@ -19,6 +19,13 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource audioDeath;
     public Animator animator;
 
+    public CameraTargeting cameraTargeting;
+    public EyeMechanics eyeMechanics;
+    public PlayerMoveUnderwater moveUnderwater;
+    public InkShooting inkShooting;
+    public PolygonCollider2D polygonCollider;
+    
+
 
     void Start()
     {
@@ -32,8 +39,12 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             StartCoroutine(Death());
-            audioDeath.Play();
-            
+           // audioDeath.Play();
+            cameraTargeting.enabled = false;
+            eyeMechanics.enabled = false;
+            moveUnderwater.enabled = false;
+            inkShooting.enabled = false;
+            polygonCollider.enabled = false;
             // GameOver();
         }
     }
