@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public float deathAnimationTime;
     public bool isDead;
 
+    public AudioSource audioDeath;
     public Animator animator;
 
 
@@ -31,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             StartCoroutine(Death());
+            audioDeath.Play();
             
             // GameOver();
         }
