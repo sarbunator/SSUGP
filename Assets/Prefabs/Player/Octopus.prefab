@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inkProjectilePrefab: {fileID: 8301883869739404026, guid: 6d80a40b56ea07146aa12ce09a34fc5f, type: 3}
   inkCloudPrefab: {fileID: 6643285277035182582, guid: d538051305bb0d647ba917ace4488222, type: 3}
-  projectileSpeed: 5
+  projectileSpeed: 7
   maxProjectileDistance: 6
   inkSecondaryFireCloudPrefab: {fileID: 9037359824017003308, guid: 36038b8422461a54a8c80cd627bf9562, type: 3}
 --- !u!1 &505396207590410350
@@ -297,6 +297,9 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   healthBar: {fileID: 0}
+  deathAnimationTime: 4
+  isDead: 0
+  animator: {fileID: 2947475719858184393}
 --- !u!60 &353638783107632952
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -397,10 +400,15 @@ MonoBehaviour:
   originalEye: {fileID: 21300000, guid: db2e8204cebe5664780cc963b8130785, type: 3}
   irisAngry: {fileID: 21300000, guid: 99a040561d52491459a64a2d81542615, type: 3}
   irisHappy: {fileID: 21300000, guid: f850fd902098f4a42b5afa93541bfb92, type: 3}
+  irisDead: {fileID: 21300000, guid: 74af0708f875fe14ebbd4cd3789d0e36, type: 3}
   expressionAngry: {fileID: 4827109695745869737}
   expressionHappy: {fileID: 2838046165899126289}
+  expressionDead: {fileID: 7592415989226476253}
   angryTime: 1
   happyTime: 1
+  sadDead: 5
+  damagedTime: 2
+  playerHealth: {fileID: 5625961119752057004}
 --- !u!1 &6136064146588113415
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +750,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -2896544804346899065, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2896544804346899065, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: -2767561398958362836, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -2732270903086904994, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -907,7 +927,8 @@ PrefabInstance:
       value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -6900818959896083359, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5961843501644000419, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
       insertIndex: -1
@@ -927,6 +948,11 @@ Transform:
 --- !u!212 &4827109695745869737 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8965997753980649715, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
+  m_PrefabInstance: {fileID: 4508325077027211098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7592415989226476253 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: -2896544804346899065, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
   m_PrefabInstance: {fileID: 4508325077027211098}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7794729122278108153 stripped

@@ -10,9 +10,11 @@ public class Damage : MonoBehaviour
     public EyeMechanics eyeMechanics;
 
     public bool isDamaged;
+    public bool damageImmunity;
     public float damageGraceTime;
 
 
+    public Animator animator;
 
     void Start()
     {
@@ -21,11 +23,17 @@ public class Damage : MonoBehaviour
 
     IEnumerator TookDamage()
     {
+        damageImmunity = true;
         isDamaged = true;
+        animator.SetBool("isDamaged", isDamaged);
+        yield return new WaitForSeconds(0.3f);
+        isDamaged = false;
+        animator.SetBool("isDamaged", isDamaged);
 
         yield return new WaitForSeconds(damageGraceTime);
+        damageImmunity = false;
 
-        isDamaged = false;
+
     }
 
     public void CoroutineTookDamage()
