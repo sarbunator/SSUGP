@@ -18,9 +18,11 @@ public class PlayerHealth : MonoBehaviour
 
     public Animator animator;
 
+
     void Start()
     {
         maxHealth = health;
+        
     }
 
     void Update()
@@ -29,7 +31,8 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             StartCoroutine(Death());
-            //GameOver();
+            
+            // GameOver();
         }
     }
 

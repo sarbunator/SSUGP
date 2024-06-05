@@ -6,6 +6,12 @@ public class PointManager : MonoBehaviour
     public int pointCount;
     public Text pointText;
 
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     void Start()
     {
         // Try to find the pointText if it's not assigned in the inspector
@@ -23,6 +29,8 @@ public class PointManager : MonoBehaviour
         }
     }
 
+  
+
     void Update()
     {
         if (pointText != null)
@@ -32,6 +40,14 @@ public class PointManager : MonoBehaviour
         else
         {
             Debug.LogError("pointText is not assigned and could not be found in the scene.");
+        }
+        if (pointText == null)   // copied from the above
+        {
+            GameObject pointTextObject = GameObject.Find("PointText");
+            if (pointTextObject != null)
+            {
+                pointText = pointTextObject.GetComponent<Text>();
+            }
         }
     }
 }

@@ -20,6 +20,7 @@ public class EyeMechanics : MonoBehaviour
     public float angryTime;
     public float happyTime;
     public float sadDead;
+    public float damagedTime;
 
     public PlayerHealth playerHealth;
 
@@ -50,6 +51,20 @@ public class EyeMechanics : MonoBehaviour
                 break;
         }
     }
+    IEnumerator Damaged()
+    {
+        SpriteChangeIris(3);
+        expressionDead.enabled = true;
+        yield return new WaitForSecondsRealtime(damagedTime);
+        SpriteChangeIris(0);
+        expressionDead.enabled = false;
+    }
+
+    public void StartDamagedCoroutine()
+    {
+        StartCoroutine(Damaged());
+    }
+
 
     IEnumerator Dead()
     {

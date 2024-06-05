@@ -4533,6 +4533,14 @@ PrefabInstance:
       propertyPath: m_Creator
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5841409229197616489, guid: 8beddde2ab108cb4da70b53f6100d23f, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: 32.143406
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841409229197616489, guid: 8beddde2ab108cb4da70b53f6100d23f, type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: 7.424956
+      objectReference: {fileID: 0}
     - target: {fileID: 6421703435651349490, guid: 8beddde2ab108cb4da70b53f6100d23f, type: 3}
       propertyPath: m_Name
       value: Walls_Reefs
@@ -5747,6 +5755,10 @@ PrefabInstance:
       propertyPath: pHealth
       value: 
       objectReference: {fileID: 2089387774}
+    - target: {fileID: -6398217278952554333, guid: 5d49fc8f89fbd08428aad28331416a01, type: 3}
+      propertyPath: eyeMechanics
+      value: 
+      objectReference: {fileID: 2089387775}
     - target: {fileID: 1536664887331365125, guid: 5d49fc8f89fbd08428aad28331416a01, type: 3}
       propertyPath: m_Name
       value: SharkPlaceHolder
@@ -6453,6 +6465,10 @@ PrefabInstance:
     - target: {fileID: 2838046165899126289, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: m_SortingOrder
       value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954179066409984027, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2954179066409984027, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: m_LocalPosition.x
