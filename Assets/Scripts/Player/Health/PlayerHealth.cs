@@ -16,7 +16,9 @@ public class PlayerHealth : MonoBehaviour
     public float deathAnimationTime;
     public bool isDead;
 
-    public AudioSource audioDeath;
+
+    //public AudioSource source;
+    //public AudioClip audioDeath;
     public Animator animator;
 
     public CameraTargeting cameraTargeting;
@@ -39,7 +41,8 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             StartCoroutine(Death());
-           // audioDeath.Play();
+            //source.PlayOneShot(audioDeath);
+            //source.Stop();
             cameraTargeting.enabled = false;
             eyeMechanics.enabled = false;
             moveUnderwater.enabled = false;

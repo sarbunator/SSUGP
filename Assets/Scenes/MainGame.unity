@@ -1524,6 +1524,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1620,6 +1621,55 @@ MonoBehaviour:
   playerMouseThresholdPoint: {fileID: 50359666}
   offset: {x: 0, y: 0, z: 0}
   speed: 4
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
+--- !u!1 &644672898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1536664887331365125, guid: 5d49fc8f89fbd08428aad28331416a01, type: 3}
+  m_PrefabInstance: {fileID: 1569429470}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &730194947
 GameObject:
   m_ObjectHideFlags: 0
@@ -5958,6 +6008,14 @@ PrefabInstance:
       propertyPath: eyeMechanics
       value: 
       objectReference: {fileID: 2089387775}
+    - target: {fileID: 321925506572476527, guid: 5d49fc8f89fbd08428aad28331416a01, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 321925506572476527, guid: 5d49fc8f89fbd08428aad28331416a01, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1536664887331365125, guid: 5d49fc8f89fbd08428aad28331416a01, type: 3}
       propertyPath: m_Name
       value: SharkPlaceHolder
@@ -6013,7 +6071,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1536664887331365125, guid: 5d49fc8f89fbd08428aad28331416a01, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1647724508}
   m_SourcePrefab: {fileID: 100100000, guid: 5d49fc8f89fbd08428aad28331416a01, type: 3}
 --- !u!1 &1610778405
 GameObject:
@@ -6244,6 +6305,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1764903579812225334, guid: 5d49fc8f89fbd08428aad28331416a01, type: 3}
   m_PrefabInstance: {fileID: 1569429470}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1647724508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644672898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3d0b9c9cc8a014ba444cd844df85df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementThreshold: 0.1
 --- !u!1 &1682480206
 GameObject:
   m_ObjectHideFlags: 0
@@ -6655,9 +6729,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5625961119752057004, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625961119752057004, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 517259834}
+    - target: {fileID: 5625961119752057004, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
+      propertyPath: audioDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 90f681c9f9e058a4d91e09703f0429d1, type: 3}
     - target: {fileID: 5625961119752057004, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: cameraTargeting
       value: 
