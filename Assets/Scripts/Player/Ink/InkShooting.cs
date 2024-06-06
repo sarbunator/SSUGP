@@ -17,10 +17,13 @@ public class InkShooting : MonoBehaviour
     private bool isShooting = false;
     private Vector2 playerPosition;
 
+    public int primaryFireInkCost = 1; // cost for ink shoot
+    public int secondaryFireInkCost = 2; // cost for ink splash
 
+    
     void ShootInk()
     {
-        if (GameManager.Instance.UseInk()) // check if there's enough ink to shoot
+        if (GameManager.Instance.UseInk(primaryFireInkCost)) // check if there's enough ink to shoot
         {
 
             isShooting = true;
@@ -33,6 +36,7 @@ public class InkShooting : MonoBehaviour
         }
     }
  
+
     void ShootingControls()
     {
         if (Input.GetMouseButtonDown(0))
@@ -56,9 +60,18 @@ public class InkShooting : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1)) // Need to add more here. Cooldown etc.
         {
+           SecondaryFire();
+        }
+    }
+
+    void SecondaryFire()
+    {
+        if (GameManager.Instance.UseInk(secondaryFireInkCost))
+        {
             Instantiate(inkSecondaryFireCloudPrefab, transform.position, transform.rotation);
         }
     }
+
 
     void ExplodeInk()
     {
