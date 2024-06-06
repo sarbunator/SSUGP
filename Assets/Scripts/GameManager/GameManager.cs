@@ -21,11 +21,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public bool UseInk()
+    public bool UseInk(int amount)
     {
-        if (inkCount > 0)
+        if (inkCount >= amount)
         {
-            inkCount--;
+            inkCount -= amount;
             return true;
         }
         return false;
