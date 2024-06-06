@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Main_Body
+    m_Hash: 433591373
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Main_Body_Default
+      m_Hash: 708828270
+      m_Sprite: {fileID: 8367390446514225363, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 8367390446514225363, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+    - m_Name: Main_Body_Orange
+      m_Hash: 173353844
+      m_Sprite: {fileID: 2758747346885049615, guid: edb80bf915634f54980804fc25e4c0e3, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2758747346885049615, guid: edb80bf915634f54980804fc25e4c0e3, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Fin_Upper
+    m_Hash: 197681068
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Fin_Upper_Default
+      m_Hash: 329971376
+      m_Sprite: {fileID: -7506358243074230984, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -7506358243074230984, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Fin_Side
+    m_Hash: 1052000402
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Fin_Side_Default
+      m_Hash: 531233245
+      m_Sprite: {fileID: 4291169951117954050, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4291169951117954050, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Eyebrow
+    m_Hash: 486420949
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Eyebrow_Default
+      m_Hash: 315231306
+      m_Sprite: {fileID: 8315053269550988963, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 8315053269550988963, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Eyebrow_Hide
+    m_Hash: 153188452
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Eyebrow_Hide_Default
+      m_Hash: 309157073
+      m_Sprite: {fileID: -8140224535780120105, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8140224535780120105, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Cheek
+    m_Hash: 722805905
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Cheek_Default
+      m_Hash: 345984113
+      m_Sprite: {fileID: 2694491544598842403, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2694491544598842403, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Cheek_Hide
+    m_Hash: 228992638
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Cheek_Hide_Default
+      m_Hash: 333220259
+      m_Sprite: {fileID: -7700662350265576130, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -7700662350265576130, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Jaw_Lower
+    m_Hash: 748341935
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Jaw_Lower_Default
+      m_Hash: 596918962
+      m_Sprite: {fileID: 4651445263514193785, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4651445263514193785, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Eye
+    m_Hash: 171295057
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Eye_Default
+      m_Hash: 767125935
+      m_Sprite: {fileID: -1244423658067087281, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1244423658067087281, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Eye_Specular
+    m_Hash: 586462220
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Eye_Specular_Default
+      m_Hash: 534393147
+      m_Sprite: {fileID: 2343701043235356418, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2343701043235356418, guid: 0f7508386d650e04b9077d7d97f55f39, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638532739787613765
+  m_Version: 1
