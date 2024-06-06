@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 321925506572476527}
   - component: {fileID: -6398217278952554333}
   - component: {fileID: 9004149358468788400}
+  - component: {fileID: -5042940923129114535}
   m_Layer: 0
   m_Name: SharkPlaceHolder
   m_TagString: Shark_1
@@ -186,3 +187,23 @@ CapsuleCollider2D:
   m_Offset: {x: -0.19482882, y: -0.35741302}
   m_Size: {x: 3.5090284, y: 1.2719082}
   m_Direction: 1
+--- !u!114 &-5042940923129114535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536664887331365125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa4e01b2e68def49ae2a16b8ae70d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 5
+  viewAngle: 90
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
