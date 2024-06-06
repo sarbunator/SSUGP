@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.002002497, g: 0.002002497, b: 0.009433985, a: 1}
+  m_Color: {r: 0.08627451, g: 0.105882354, b: 0.28627452, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -223,9 +223,9 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.008944485, g: 0.008944485, b: 0.009433985, a: 1}
-      key1: {r: 0.035065833, g: 0.035065833, b: 0.03773582, a: 1}
-      key2: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+      key0: {r: 0.08627451, g: 0.105882354, b: 0.28627452, a: 1}
+      key1: {r: 0.08627451, g: 0.105882354, b: 0.28627452, a: 1}
+      key2: {r: 0.08627451, g: 0.105882354, b: 0.28627452, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -275,4 +275,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a332c031ff8a2d48a1aca04e3f84104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkCloudPrefab: {fileID: 6643285277035182582, guid: d538051305bb0d647ba917ace4488222, type: 3}
+  inkCloudPrefab: {fileID: 6643285277035182582, guid: f4975b2a97a025a4ea2f2ceb3b44d17d, type: 3}

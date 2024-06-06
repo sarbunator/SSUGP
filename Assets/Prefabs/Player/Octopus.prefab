@@ -45,10 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkProjectilePrefab: {fileID: 8301883869739404026, guid: 6d80a40b56ea07146aa12ce09a34fc5f, type: 3}
-  inkCloudPrefab: {fileID: 6643285277035182582, guid: d538051305bb0d647ba917ace4488222, type: 3}
+  inkCloudPrefab: {fileID: 6643285277035182582, guid: f4975b2a97a025a4ea2f2ceb3b44d17d, type: 3}
   projectileSpeed: 7
   maxProjectileDistance: 6
   inkSecondaryFireCloudPrefab: {fileID: 9037359824017003308, guid: 36038b8422461a54a8c80cd627bf9562, type: 3}
+  primaryFireInkCost: 1
+  secondaryFireInkCost: 2
 --- !u!1 &505396207590410350
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +99,7 @@ GameObject:
   - component: {fileID: 353638783107632952}
   - component: {fileID: 2947475719858184393}
   - component: {fileID: 7609976430431984841}
+  - component: {fileID: 6097535767964899190}
   m_Layer: 7
   m_Name: Octopus
   m_TagString: Player
@@ -242,9 +245,9 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
-      key1: {r: 0.11032185, g: 0.11032185, b: 0.11032185, a: 1}
-      key2: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+      key0: {r: 0.08627451, g: 0.105882354, b: 0.28627452, a: 1}
+      key1: {r: 0.08627451, g: 0.105882354, b: 0.28627452, a: 1}
+      key2: {r: 0.16470589, g: 0.1764706, b: 0.42745098, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -299,7 +302,6 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   deathAnimationTime: 4
   isDead: 0
-  audioDeath: {fileID: 0}
   animator: {fileID: 2947475719858184393}
   cameraTargeting: {fileID: 0}
   eyeMechanics: {fileID: 7609976430431984841}
@@ -416,6 +418,20 @@ MonoBehaviour:
   sadDead: 5
   damagedTime: 1
   playerHealth: {fileID: 5625961119752057004}
+--- !u!114 &6097535767964899190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2710883584037366780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c683224ba2b631440b38ec7fb3179793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pm: {fileID: 0}
+  eyeMechanics: {fileID: 7609976430431984841}
 --- !u!1 &6136064146588113415
 GameObject:
   m_ObjectHideFlags: 0
