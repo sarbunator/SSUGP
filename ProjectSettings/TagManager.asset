@@ -14,6 +14,7 @@ TagManager:
   - Shark_1
   - Shark_2
   - Shark_3
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,8 @@ public class EnemyPatrol : MonoBehaviour
     public GameObject player;
     public float detectionRange;
 
+    public Animator animator;
+
     private int targetPoint;
     private bool isChasingPlayer;
     private float closeEnoughDistance = 0.1f; // Threshold to consider the NPC has reached a waypoint
@@ -27,11 +29,13 @@ public class EnemyPatrol : MonoBehaviour
         {
             // Start chasing the player
             isChasingPlayer = true;
+            animator.SetBool("isAggro", isChasingPlayer);
         }
         else if (distanceToPlayer >= detectionRange && isChasingPlayer)
         {
             // Stop chasing the player and return to patrolling
             isChasingPlayer = false;
+            animator.SetBool("isAggro", isChasingPlayer);
             targetPoint = GetClosestPatrolPointIndex();
         }
 
