@@ -27,19 +27,37 @@ public class EnemyPatrol : MonoBehaviour
 
         if (distance < distanceBetween)
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed = Time.deltaTime);
-            transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+            //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
         }
 
-        else (transform.position == patrolPoints[targetPoint].position) 
+        if (transform.position == patrolPoints[targetPoint].position)
         {
             increaseTargetInt();
         }
 
         transform.position = Vector2.MoveTowards(transform.position,
-            patrolPoints[targetPoint].position, speed * Time.deltaTime);
+        patrolPoints[targetPoint].position, speed * Time.deltaTime);
 
-        
+        //else (transform.position == patrolPoints[targetPoint].position)
+        //{
+
+        //    increaseTargetInt();
+        //    transform.position = Vector2.MoveTowards(transform.position,
+        //    patrolPoints[targetPoint].position, speed * Time.deltaTime);
+
+        //}
+        /*
+        if (transform.position == patrolPoints[targetPoint].position)
+        {
+            increaseTargetInt();
+        }
+        transform.position = Vector2.MoveTowards(transform.position,
+            patrolPoints[targetPoint].position, speed * Time.deltaTime);
+    }
+        */
+
+
     }
 
 
