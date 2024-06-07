@@ -30,7 +30,8 @@ public class EnemyPatrol : MonoBehaviour
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed = Time.deltaTime);
             transform.rotation = Quaternion.Euler(Vector3.forward * angle);
         }
-        if (transform.position == patrolPoints[targetPoint].position) 
+
+        else (transform.position == patrolPoints[targetPoint].position) 
         {
             increaseTargetInt();
         }
