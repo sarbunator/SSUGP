@@ -22,6 +22,8 @@ public class EyeMechanics : MonoBehaviour
     public float sadDead;
     public float damagedTime;
 
+    private bool waiting = false;
+
     public PlayerHealth playerHealth;
 
     private Camera mainCamera;
@@ -82,10 +84,11 @@ public class EyeMechanics : MonoBehaviour
 
     IEnumerator Angry()
     {
+        waiting = true;
         SpriteChangeIris(1);
         expressionAngry.enabled = true;
         yield return new WaitForSecondsRealtime(angryTime);
-
+        waiting = false;
         SpriteChangeIris(0);
         expressionAngry.enabled = false;
         
@@ -101,7 +104,12 @@ public class EyeMechanics : MonoBehaviour
     }
     public void StartHappyCoroutine()
     {
-        StartCoroutine(Happy());
+        if (waiting)
+            return;
+        
+            StartCoroutine(Happy());
+        
+        
     }
 
     public void ExpressionLogistic()
