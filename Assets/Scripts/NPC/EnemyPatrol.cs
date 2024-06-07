@@ -1,72 +1,85 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class EnemyPatrol : MonoBehaviour
 {
     public Transform[] patrolPoints;
-    public int targetPoint;
     public float speed;
     public GameObject player;
-    public float distanceBetween;
+    public float detectionRange;
 
-    private float distance;
- 
+    private int targetPoint;
+    private bool isChasingPlayer;
+    private float closeEnoughDistance = 0.1f; // Threshold to consider the NPC has reached a waypoint
+
     void Start()
     {
         targetPoint = 0;
+        isChasingPlayer = false;
     }
 
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direction = player.transform.position - transform.position;
-        direction.Normalize();
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distance < distanceBetween)
+        if (distanceToPlayer < detectionRange)
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-            //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+            // Start chasing the player
+            isChasingPlayer = true;
+        }
+        else if (distanceToPlayer >= detectionRange && isChasingPlayer)
+        {
+            // Stop chasing the player and return to patrolling
+            isChasingPlayer = false;
+            targetPoint = GetClosestPatrolPointIndex();
         }
 
-        if (transform.position == patrolPoints[targetPoint].position)
+        if (isChasingPlayer)
         {
-            increaseTargetInt();
+            ChasePlayer();
         }
-
-        transform.position = Vector2.MoveTowards(transform.position,
-        patrolPoints[targetPoint].position, speed * Time.deltaTime);
-
-        //else (transform.position == patrolPoints[targetPoint].position)
-        //{
-
-        //    increaseTargetInt();
-        //    transform.position = Vector2.MoveTowards(transform.position,
-        //    patrolPoints[targetPoint].position, speed * Time.deltaTime);
-
-        //}
-        /*
-        if (transform.position == patrolPoints[targetPoint].position)
+        else
         {
-            increaseTargetInt();
+            Patrol();
         }
-        transform.position = Vector2.MoveTowards(transform.position,
-            patrolPoints[targetPoint].position, speed * Time.deltaTime);
-    }
-        */
-
-
     }
 
-
-    void increaseTargetInt()
-    { 
-        targetPoint++;
-        if(targetPoint >= patrolPoints.Length) 
+    void Patrol()
+    {
+        if (Vector2.Distance(transform.position, patrolPoints[targetPoint].position) < closeEnoughDistance)
         {
-            targetPoint = 0;
+            targetPoint = (targetPoint + 1) % patrolPoints.Length;
         }
+
+        MoveTowards(patrolPoints[targetPoint].position);
+    }
+
+    void ChasePlayer()
+    {
+        MoveTowards(player.transform.position);
+    }
+
+    void MoveTowards(Vector2 targetPosition)
+    {
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+    }
+
+    int GetClosestPatrolPointIndex()
+    {
+        int closestIndex = 0;
+        float closestDistance = Vector2.Distance(transform.position, patrolPoints[0].position);
+
+        for (int i = 1; i < patrolPoints.Length; i++)
+        {
+            float distance = Vector2.Distance(transform.position, patrolPoints[i].position);
+            if (distance < closestDistance)
+            {
+                closestIndex = i;
+                closestDistance = distance;
+            }
+        }
+
+        return closestIndex;
     }
 }
