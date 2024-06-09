@@ -96,10 +96,12 @@ public class EyeMechanics : MonoBehaviour
 
     IEnumerator Happy()
     {
+        waiting = true;
         expressionHappy.enabled = true;
         SpriteChangeIris(2);
         yield return new WaitForSecondsRealtime(happyTime);
         expressionHappy.enabled = false;
+        waiting = false;
         SpriteChangeIris(0);
     }
     public void StartHappyCoroutine()
@@ -116,6 +118,8 @@ public class EyeMechanics : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (waiting)
+            return;
             StartCoroutine(Angry());
         }   
     }

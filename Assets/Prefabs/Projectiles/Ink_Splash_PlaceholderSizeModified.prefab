@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5585522678335622919}
   - component: {fileID: 6024974991973889966}
   - component: {fileID: 3059126084975271160}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ink_Splash_PlaceholderSizeModified
-  m_TagString: Untagged
+  m_TagString: InkSplashMain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

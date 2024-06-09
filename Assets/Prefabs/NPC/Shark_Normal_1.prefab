@@ -1783,7 +1783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9072766609627906594}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.4, y: -0.8, z: -0.014256371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1832,6 +1832,7 @@ MonoBehaviour:
   speed: 6
   player: {fileID: 0}
   detectionRange: 5
+  animator: {fileID: 771856528488417418}
 --- !u!114 &7068489514307948306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1844,7 +1845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f3d0b9c9cc8a014ba444cd844df85df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementThreshold: 0.05
+  movementThreshold: 0.01
 --- !u!114 &6124954238241484352
 MonoBehaviour:
   m_ObjectHideFlags: 0
