@@ -5,6 +5,7 @@ using UnityEngine;
 public class Stunned : MonoBehaviour
 {
     public float stunDuration;
+    public float stunDurationSecondary;
     public bool isStunned;
 
     public EnemyPatrol enemyPatrol;
@@ -23,8 +24,19 @@ public class Stunned : MonoBehaviour
         waiting = false;
     }
 
+    IEnumerator StunSecondary()
+    {
+        waiting = true;
+        isStunned = true;
+        enemyPatrol.enabled = false;
+        yield return new WaitForSeconds(stunDurationSecondary);
+        enemyPatrol.enabled = true;
+        isStunned = false;
+        waiting = false;
+    }
 
-    void Start()
+
+        void Start()
     {
         
     }
@@ -34,7 +46,7 @@ public class Stunned : MonoBehaviour
     {
         
     }
-    
+
 
     //private void OnCollisionEnter2D(Collision2D collision)
     //{
@@ -52,6 +64,10 @@ public class Stunned : MonoBehaviour
         if (collision.gameObject.CompareTag("InkSplashMain"))
         {
             StartCoroutine(Stun());
+        }
+        if (collision.gameObject.CompareTag("InkSplashSecondary"))
+        {
+            StartCoroutine(StunSecondary());
         }
     }
 
