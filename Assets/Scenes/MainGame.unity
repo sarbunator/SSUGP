@@ -6424,6 +6424,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3062250153167417825, guid: 17e1716e683422d44bc7e4f982384e0b, type: 3}
   m_PrefabInstance: {fileID: 7153722768902225988}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &1640338953 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8518303542780453147, guid: 17e1716e683422d44bc7e4f982384e0b, type: 3}
+  m_PrefabInstance: {fileID: 7153722768902225988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1640338954 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6124954238241484352, guid: 17e1716e683422d44bc7e4f982384e0b, type: 3}
@@ -6468,6 +6473,7 @@ MonoBehaviour:
   biteAnim: {fileID: 1640338958}
   damage: {fileID: 1640338954}
   enemyPatrol: {fileID: 1640338956}
+  capsuleCollider: {fileID: 1640338953}
 --- !u!1 &1682480206
 GameObject:
   m_ObjectHideFlags: 0
