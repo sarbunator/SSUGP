@@ -59,7 +59,6 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSecondsRealtime(deathAnimationTime);
         isDead = false;
 
-
     }
 
     void GameOver()

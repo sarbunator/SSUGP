@@ -33,7 +33,6 @@ public class Damage : MonoBehaviour
         yield return new WaitForSeconds(damageGraceTime);
         damageImmunity = false;
 
-
     }
 
     public void CoroutineTookDamage()
@@ -41,9 +40,6 @@ public class Damage : MonoBehaviour
         StartCoroutine(TookDamage());
     }
     
-    
-
-
     void Update()
     {
         
