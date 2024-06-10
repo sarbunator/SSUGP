@@ -13,6 +13,7 @@ public class SharkBite : MonoBehaviour
 
     public Damage damage;
     public EnemyPatrol enemyPatrol;
+    public CapsuleCollider2D capsuleCollider;
 
 
     void Start()
@@ -31,6 +32,7 @@ public class SharkBite : MonoBehaviour
         waiting = true;
         sharkBite = true;
         biteAnim.SetBool("sharkBite", sharkBite);
+        capsuleCollider.enabled = false;
         enemyPatrol.enabled = false;
         damage.enabled = false;
         yield return new WaitForSecondsRealtime(biteCooldown);
@@ -38,6 +40,7 @@ public class SharkBite : MonoBehaviour
         enemyPatrol.enabled = true;
         sharkBite = false;
         biteAnim.SetBool("sharkBite", sharkBite);
+        capsuleCollider.enabled = true;
         waiting = false;
     }
 
