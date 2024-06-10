@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverPanel;
-    [SerializeField] private Text restartText;
+    [SerializeField] private TMP_Text restartText;
     private bool isGameOver = false;
 
     public PlayerHealth isDead;
