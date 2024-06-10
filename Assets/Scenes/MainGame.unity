@@ -1893,6 +1893,25 @@ MonoBehaviour:
   inkbottlePrefab: {fileID: 4072100488155139854, guid: 91face678612aa24689a9cdf7db0af2f, type: 3}
   maxActiveBottles: 10
   spawnInterval: 5
+--- !u!1 &1139894510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4252708832186181515, guid: 7a389de72bbfeec4b879e0555b3405ad, type: 3}
+  m_PrefabInstance: {fileID: 7053859603061071533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1139894515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139894510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0f077f92d1a3d408361b8826b7f7ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.1
+  magnitude: 0.1
 --- !u!1 &1287646443
 GameObject:
   m_ObjectHideFlags: 0
@@ -6897,13 +6916,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2710883584037366780, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 257479814193003362}
   m_SourcePrefab: {fileID: 100100000, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
 --- !u!1 &257479814193003355 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2710883584037366780, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
   m_PrefabInstance: {fileID: 257479814193003354}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &257479814193003362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257479814193003355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639c47de17e2ad54cb0c5d6daa3935e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1336378733250858509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7324,7 +7358,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4252708832186181515, guid: 7a389de72bbfeec4b879e0555b3405ad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1139894515}
   m_SourcePrefab: {fileID: 100100000, guid: 7a389de72bbfeec4b879e0555b3405ad, type: 3}
 --- !u!1001 &7153722768902225988
 PrefabInstance:
@@ -7421,6 +7458,10 @@ PrefabInstance:
     - target: {fileID: 9072766609627906594, guid: 17e1716e683422d44bc7e4f982384e0b, type: 3}
       propertyPath: m_Name
       value: Shark_Normal_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072766609627906594, guid: 17e1716e683422d44bc7e4f982384e0b, type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
