@@ -1,95 +1,65 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PearlSpawner : MonoBehaviour
 {
-    public Transform pos; // The position where objects will be spawned
-    public GameObject[] objectsToInstantiate; // Array of objects to spawn
-    public float[] spawnWeights; // Array of weights for each object
-    public float minSpawnInterval = 1f; // Minimum time between spawns
-    public float maxSpawnInterval = 3f; // Maximum time between spawns
-    public Vector3 spawnRange; // Range within which to randomly spawn objects
+    public GameObject[] objectsToInstantiate; // Array to hold the pearl prefabs
+    public float[] spawnWeights; // Array to hold the spawn weights for each pearl
 
-    void Start()
+    public List<Transform> spawnPoints; // List to hold the predefined spawn points
+    public float spawnInterval = 5f; // Time in seconds between spawns
+
+    private void Start()
     {
-        if (pos == null)
-        {
-            Debug.LogError("Position Transform not assigned.");
-            return;
-        }
-
-        if (objectsToInstantiate == null || objectsToInstantiate.Length == 0)
-        {
-            Debug.LogError("Objects to instantiate not assigned or empty.");
-            return;
-        }
-
-        if (spawnWeights == null || spawnWeights.Length != objectsToInstantiate.Length)
-        {
-            Debug.LogError("Spawn weights not assigned or not matching the number of objects.");
-            return;
-        }
-
-        StartCoroutine(SpawnObjects());
+        // Start the coroutine that handles pearl spawning
+        StartCoroutine(SpawnPearls());
     }
 
-    IEnumerator SpawnObjects()
+    private IEnumerator SpawnPearls()
     {
-        while (true)
+        while (true) // Infinite loop to keep spawning pearls
         {
-            InstantiateObject();
-            float randomInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
-            yield return new WaitForSeconds(randomInterval);
+            // Loop through each spawn point and spawn a pearl
+            foreach (Transform spawnPoint in spawnPoints)
+            {
+                SpawnRandomPearl(spawnPoint.position);
+            }
+            // Wait for the specified interval before spawning again
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
 
-    private void InstantiateObject()
-    {
-        if (objectsToInstantiate == null || objectsToInstantiate.Length == 0)
-        {
-            Debug.LogError("Objects to instantiate array is null or empty during runtime.");
-            return;
-        }
-
-        int selectedIndex = GetWeightedRandomIndex();
-
-        if (objectsToInstantiate[selectedIndex] == null)
-        {
-            Debug.LogError($"Object at index {selectedIndex} is null.");
-            return;
-        }
-
-        Vector3 randomOffset = new Vector3(
-            Random.Range(-spawnRange.x, spawnRange.x),
-            Random.Range(-spawnRange.y, spawnRange.y),
-            Random.Range(-spawnRange.z, spawnRange.z)
-        );
-
-        Vector3 spawnPosition = pos.position + randomOffset;
-        Instantiate(objectsToInstantiate[selectedIndex], spawnPosition, objectsToInstantiate[selectedIndex].transform.rotation);
-    }
-
-    private int GetWeightedRandomIndex()
+    private void SpawnRandomPearl(Vector2 spawnPosition)
     {
         float totalWeight = 0;
-        for (int i = 0; i < spawnWeights.Length; i++)
+        // Calculate the total weight by summing up all spawn weights
+        foreach (var weight in spawnWeights)
         {
-            totalWeight += spawnWeights[i];
+            totalWeight += weight;
         }
 
-        float randomValue = Random.Range(0, totalWeight);
-        float cumulativeWeight = 0;
+        // Generate a random value between 0 and the total weight
+        float randomValue = Random.Range(0f, totalWeight);
+        GameObject objectToSpawn = null;
 
+        // Determine which pearl to spawn based on the random value and weights
         for (int i = 0; i < spawnWeights.Length; i++)
         {
-            cumulativeWeight += spawnWeights[i];
-            if (randomValue < cumulativeWeight)
+            if (randomValue < spawnWeights[i])
             {
-                return i;
+                // Select the corresponding pearl prefab to spawn
+                objectToSpawn = objectsToInstantiate[i];
+                break;
             }
+            // Subtract the current weight from the random value for the next iteration
+            randomValue -= spawnWeights[i];
         }
 
-        // Fallback, should not reach here if weights are positive
-        return 0;
+        // Instantiate the selected pearl at the specified spawn position
+        if (objectToSpawn != null)
+        {
+            Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+        }
     }
 }
