@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9104373318970510932}
   - component: {fileID: 8487038101583494043}
+  - component: {fileID: 2831693503586503528}
   - component: {fileID: 6855048944187283887}
   m_Layer: 0
   m_Name: Pufferfish_Right_Facing
@@ -85,6 +86,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2831693503586503528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581757697604864703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4af74adfeb12d84fba31c73112124b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOctopus: {fileID: 0}
+  visionDistance: 0
+  aggroDistance: 4
+  threatened: 0
+  eye: {fileID: 0}
+  iris: {fileID: 0}
+  irisMovementRadius: 0
+  animator: {fileID: 6855048944187283887}
 --- !u!95 &6855048944187283887
 Animator:
   serializedVersion: 5
