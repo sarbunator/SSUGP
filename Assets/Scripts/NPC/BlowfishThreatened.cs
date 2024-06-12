@@ -9,6 +9,7 @@ public class BlowfishThreatened : MonoBehaviour
     public float visionDistance;
     public float aggroDistance;
     public bool threatened;
+    public float reactionTime;
 
     public Transform eye;
     public Transform iris;
@@ -21,6 +22,15 @@ public class BlowfishThreatened : MonoBehaviour
     void Start()
     {
         
+    }
+
+    IEnumerator PufferfishReaction()
+    {
+        threatened = true;
+        yield return new WaitForSecondsRealtime(reactionTime);
+        
+        animator.SetBool("isAggro", threatened);
+
     }
 
     public void BlowFishEyeFollow()
@@ -41,13 +51,11 @@ public class BlowfishThreatened : MonoBehaviour
     {
         float distanceToPLayer = Vector3.Distance(transform.position, playerOctopus.position);
 
-        if (distanceToPLayer <= aggroDistance)
+        if (distanceToPLayer <= aggroDistance && threatened == false)
         {
-            //Logistics
-            threatened = true;
-            animator.SetBool("isAggro", threatened);
+            StartCoroutine(PufferfishReaction());
         }
-        else
+        else if (distanceToPLayer > aggroDistance && threatened == true)
         {
             threatened = false;
             animator.SetBool("isAggro", threatened);

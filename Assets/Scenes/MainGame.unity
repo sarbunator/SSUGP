@@ -7062,36 +7062,6 @@ Transform:
   - {fileID: 1219501292}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1521853095 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 581757697604864703, guid: e25965333f057a74596b49c08dcc6062, type: 3}
-  m_PrefabInstance: {fileID: 4417339074943348458}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1521853096 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6855048944187283887, guid: e25965333f057a74596b49c08dcc6062, type: 3}
-  m_PrefabInstance: {fileID: 4417339074943348458}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1521853099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521853095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4af74adfeb12d84fba31c73112124b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerOctopus: {fileID: 2089387757}
-  visionDistance: 0
-  aggroDistance: 4
-  threatened: 0
-  eye: {fileID: 0}
-  iris: {fileID: 0}
-  irisMovementRadius: 0
-  animator: {fileID: 1521853096}
 --- !u!1 &1524213159
 GameObject:
   m_ObjectHideFlags: 0
@@ -8345,36 +8315,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1900786846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1925099991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8980967894838275836, guid: 2de4cd9d64f73ab4d90832b0bd9d9b96, type: 3}
-  m_PrefabInstance: {fileID: 680075067079568277}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1925099992 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 571685082764774903, guid: 2de4cd9d64f73ab4d90832b0bd9d9b96, type: 3}
-  m_PrefabInstance: {fileID: 680075067079568277}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1925099995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925099991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4af74adfeb12d84fba31c73112124b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerOctopus: {fileID: 2089387757}
-  visionDistance: 0
-  aggroDistance: 4
-  threatened: 0
-  eye: {fileID: 0}
-  iris: {fileID: 0}
-  irisMovementRadius: 0
-  animator: {fileID: 1925099992}
 --- !u!1 &1961408616 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8741681224674829475, guid: 3fc8f098caa821c47ac35f1a30a671b8, type: 3}
@@ -9413,7 +9353,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4551586102463207598, guid: 2de4cd9d64f73ab4d90832b0bd9d9b96, type: 3}
+    - target: {fileID: 6976876986691046145, guid: 2de4cd9d64f73ab4d90832b0bd9d9b96, type: 3}
       propertyPath: playerOctopus
       value: 
       objectReference: {fileID: 2089387757}
@@ -9424,10 +9364,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8980967894838275836, guid: 2de4cd9d64f73ab4d90832b0bd9d9b96, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1925099995}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2de4cd9d64f73ab4d90832b0bd9d9b96, type: 3}
 --- !u!1001 &947432563376194239
 PrefabInstance:
@@ -9838,7 +9775,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pufferfish_Right_Facing
       objectReference: {fileID: 0}
-    - target: {fileID: 2831693503586503528, guid: e25965333f057a74596b49c08dcc6062, type: 3}
+    - target: {fileID: 723759814596780309, guid: e25965333f057a74596b49c08dcc6062, type: 3}
       propertyPath: playerOctopus
       value: 
       objectReference: {fileID: 2089387757}
@@ -9885,10 +9822,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 581757697604864703, guid: e25965333f057a74596b49c08dcc6062, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1521853099}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25965333f057a74596b49c08dcc6062, type: 3}
 --- !u!1001 &5407815777092501926
 PrefabInstance:

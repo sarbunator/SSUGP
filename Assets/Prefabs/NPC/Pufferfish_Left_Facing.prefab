@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2204844014320583094}
   - component: {fileID: 7531179800028660162}
-  - component: {fileID: 4551586102463207598}
+  - component: {fileID: 6976876986691046145}
   - component: {fileID: 571685082764774903}
   m_Layer: 0
   m_Name: Pufferfish_Left_Facing
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4551586102463207598
+--- !u!114 &6976876986691046145
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,6 +102,7 @@ MonoBehaviour:
   visionDistance: 0
   aggroDistance: 4
   threatened: 0
+  reactionTime: 0.5
   eye: {fileID: 0}
   iris: {fileID: 0}
   irisMovementRadius: 0
