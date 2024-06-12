@@ -10,6 +10,9 @@ public class BlowfishThreatened : MonoBehaviour
     public float aggroDistance;
     public bool threatened;
     public float reactionTime;
+    public float fullyPuffedTime;
+
+    public CircleCollider2D circleCollider;
 
     public Transform eye;
     public Transform iris;
@@ -28,8 +31,9 @@ public class BlowfishThreatened : MonoBehaviour
     {
         threatened = true;
         yield return new WaitForSecondsRealtime(reactionTime);
-        
         animator.SetBool("isAggro", threatened);
+        yield return new WaitForSecondsRealtime(fullyPuffedTime);
+        circleCollider.enabled = true;
 
     }
 
@@ -59,6 +63,7 @@ public class BlowfishThreatened : MonoBehaviour
         {
             threatened = false;
             animator.SetBool("isAggro", threatened);
+            circleCollider.enabled = false;
         }
     }
 

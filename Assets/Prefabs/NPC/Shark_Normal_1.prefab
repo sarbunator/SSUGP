@@ -1763,6 +1763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3062250153167417825}
   - component: {fileID: 771856528488417418}
+  - component: {fileID: 9101174674039895704}
   - component: {fileID: 264219166601492961}
   - component: {fileID: 455781789218035917}
   - component: {fileID: 7068489514307948306}
@@ -1771,7 +1772,7 @@ GameObject:
   - component: {fileID: 6926115833389660618}
   m_Layer: 0
   m_Name: Shark_Normal_1
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1813,6 +1814,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9101174674039895704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9072766609627906594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90b91d8080a41dd44ba2ba08ba36d895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  biteCooldown: 0.5
+  sharkBite: 0
+  biteAnim: {fileID: 771856528488417418}
+  damage: {fileID: 6124954238241484352}
+  enemyPatrol: {fileID: 455781789218035917}
+  capsuleCollider: {fileID: 8518303542780453147}
 --- !u!114 &264219166601492961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1826,6 +1845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stunDuration: 2
+  stunDurationSecondary: 4
   isStunned: 0
   enemyPatrol: {fileID: 455781789218035917}
 --- !u!114 &455781789218035917
