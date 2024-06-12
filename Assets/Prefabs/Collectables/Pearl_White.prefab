@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 184915214077009429}
   - component: {fileID: -5966476021626040674}
   - component: {fileID: 7046630455627692606}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Pearl_White
   m_TagString: Pearl_White
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: ed86c57fc75cd0748b9b52aea25588c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
