@@ -8,6 +8,13 @@ public class EyeMechanics : MonoBehaviour
     public Transform irisNormal;
     public float irisMovementRadius;
 
+    public Transform eyeReflection;
+    private Vector3 originalReflectionPosition;
+    private Vector3 originalReflectionScale;
+
+
+    public PlayerMoveUnderwater playerMoveUnderwater;
+
     public Sprite originalEye;
     public Sprite irisAngry;
     public Sprite irisHappy;
@@ -32,7 +39,10 @@ public class EyeMechanics : MonoBehaviour
     {
         mainCamera = Camera.main;
         spriteRenderer = irisNormal.GetComponent<SpriteRenderer>();
-
+        playerMoveUnderwater = GetComponent<PlayerMoveUnderwater>();
+        originalReflectionPosition = eyeReflection.position;
+        originalReflectionScale = eyeReflection.localScale;
+        
     }
 
     public void SpriteChangeIris(int eyeIndex)
@@ -130,7 +140,26 @@ public class EyeMechanics : MonoBehaviour
         Vector3 worldMousePosition = mainCamera.ScreenToWorldPoint(mousePosition);
         UpdateIrisPosition(eye, irisNormal, worldMousePosition);
     }
+    
+    void EyeReflectionHold()
+    {
 
+
+
+        eyeReflection.position = new Vector3(transform.position.x, eyeReflection.position.y, eyeReflection.position.z);
+
+        if (playerMoveUnderwater.isFacingLeft)
+        {
+            eyeReflection.position = originalReflectionPosition;
+            eyeReflection.localScale = originalReflectionScale;
+        }
+        else
+        {
+            eyeReflection.position = new Vector3(-originalReflectionPosition.x, originalReflectionPosition.y, originalReflectionPosition.z);
+            eyeReflection.localScale = new Vector3(-originalReflectionScale.x, originalReflectionScale.y, originalReflectionScale.z);
+
+        }
+    }
 
     void Update()
     {
@@ -144,6 +173,9 @@ public class EyeMechanics : MonoBehaviour
             ExpressionLogistic();
         }
 
+        //EyeReflectionHold();
+
+       
     }
 
     void UpdateIrisPosition(Transform eye, Transform irisNormal, Vector3 targetPosition)

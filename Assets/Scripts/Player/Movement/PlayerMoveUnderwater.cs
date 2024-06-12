@@ -12,7 +12,7 @@ public class PlayerMoveUnderwater : MonoBehaviour
     [SerializeField] public float movementForce;
 
     private Vector2 moveDirection;
-    private bool isFacingLeft = true;
+    public bool isFacingLeft = true;
 
     // Dash kokeilu 
     private bool canDash = true;
