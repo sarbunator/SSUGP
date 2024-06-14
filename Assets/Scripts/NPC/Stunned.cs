@@ -6,6 +6,7 @@ public class Stunned : MonoBehaviour
 {
     public float stunDuration;
     public float stunDurationSecondary;
+    [HideInInspector]
     public bool isStunned;
 
     public EnemyPatrol enemyPatrol;

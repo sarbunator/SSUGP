@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public Image healthBar;
 
     public float deathAnimationTime;
+    [HideInInspector]
     public bool isDead;
 
 

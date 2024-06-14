@@ -101,7 +101,6 @@ GameObject:
   - component: {fileID: 7609976430431984841}
   - component: {fileID: 6097535767964899190}
   - component: {fileID: 2055083326954323073}
-  - component: {fileID: 8568233186280655120}
   m_Layer: 7
   m_Name: Octopus
   m_TagString: Player
@@ -449,18 +448,6 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_SortAtRoot: 0
---- !u!114 &8568233186280655120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2710883584037366780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 639c47de17e2ad54cb0c5d6daa3935e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5495437623386376871
 GameObject:
   m_ObjectHideFlags: 0

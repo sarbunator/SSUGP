@@ -14,7 +14,6 @@ public class PlayerMoveUnderwater : MonoBehaviour
     private Vector2 moveDirection;
     public bool isFacingLeft = true;
 
-    // Dash kokeilu 
     private bool canDash = true;
     private bool isDashing;
     public float dashingPower;
@@ -85,6 +84,7 @@ public class PlayerMoveUnderwater : MonoBehaviour
         rb.AddForce(moveDirection * dashingPower * movementForce);
         tr.emitting = true;
         animator.SetBool("isDashing", isDashing);
+        FindObjectOfType<AudioManager>().Play("Dash_1");
         yield return new WaitForSeconds(dashingTime);
         tr.emitting = false;
         rb.gravityScale = originalGravity;

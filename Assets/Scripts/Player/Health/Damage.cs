@@ -9,16 +9,19 @@ public class Damage : MonoBehaviour
 
     public EyeMechanics eyeMechanics;
 
+    [HideInInspector]
     public bool isDamaged;
+    [HideInInspector]
     public bool damageImmunity;
     public float damageGraceTime;
+
 
 
     public Animator animator;
 
     void Start()
     {
-        
+
     }
 
     IEnumerator TookDamage()
@@ -51,6 +54,7 @@ public class Damage : MonoBehaviour
         {
             StartCoroutine(TookDamage());
             eyeMechanics.StartDamagedCoroutine();
+            
             pHealth.health -= damage;
         }
     }

@@ -5,6 +5,7 @@ public class PlayerCollectibles : MonoBehaviour
     public PointManager pm;
     public EyeMechanics eyeMechanics;
 
+  
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Pearl_White"))
@@ -20,7 +21,7 @@ public class PlayerCollectibles : MonoBehaviour
             eyeMechanics.StartHappyCoroutine();
         }
         else if (other.gameObject.CompareTag("Pearl_Golden"))
-        {
+        { 
             Destroy(other.gameObject);
             pm.pointCount += 25;
             eyeMechanics.StartHappyCoroutine();

@@ -5,6 +5,7 @@ using UnityEngine;
 public class SharkBite : MonoBehaviour
 {
     public float biteCooldown;
+    [HideInInspector]
     public bool sharkBite;
 
     public Animator biteAnim;

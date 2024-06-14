@@ -8,6 +8,7 @@ public class BlowfishThreatened : MonoBehaviour
 
     public float visionDistance;
     public float aggroDistance;
+    [HideInInspector]
     public bool threatened;
     public float reactionTime;
     public float fullyPuffedTime;
