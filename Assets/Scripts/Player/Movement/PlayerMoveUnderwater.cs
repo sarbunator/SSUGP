@@ -92,6 +92,8 @@ public class PlayerMoveUnderwater : MonoBehaviour
         animator.SetBool("isDashing", isDashing);
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+
+        
     }
 
     private void Awake()
