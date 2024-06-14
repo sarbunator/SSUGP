@@ -84,7 +84,7 @@ public class PlayerMoveUnderwater : MonoBehaviour
         rb.AddForce(moveDirection * dashingPower * movementForce);
         tr.emitting = true;
         animator.SetBool("isDashing", isDashing);
-        FindObjectOfType<AudioManager>().Play("Dash_1");
+        FindObjectOfType<AudioManager>().Play(new string[] { "Dash_1", "Dash_2", "Dash_3", "Dash_4" });
         yield return new WaitForSeconds(dashingTime);
         tr.emitting = false;
         rb.gravityScale = originalGravity;

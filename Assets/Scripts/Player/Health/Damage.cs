@@ -54,7 +54,7 @@ public class Damage : MonoBehaviour
         {
             StartCoroutine(TookDamage());
             eyeMechanics.StartDamagedCoroutine();
-            
+            FindObjectOfType<AudioManager>().Play(new string[] { "Injury_1", "Injury_2", "Injury_3"});
             pHealth.health -= damage;
         }
     }
