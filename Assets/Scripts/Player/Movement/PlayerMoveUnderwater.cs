@@ -9,6 +9,9 @@ public class PlayerMoveUnderwater : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
 
+    public AudioSource audioSource;
+    public AudioClip swim;
+
     [SerializeField] public float movementForce;
 
     private Vector2 moveDirection;
@@ -45,6 +48,12 @@ public class PlayerMoveUnderwater : MonoBehaviour
 
         bool isMoving = moveDirection != Vector2.zero;
         animator.SetBool("isMoving", isMoving);
+
+        if (!isMoving)
+        {
+            audioSource.clip = swim;
+            audioSource.Play();
+        }
 
     }
 
@@ -99,6 +108,7 @@ public class PlayerMoveUnderwater : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     void Start()
