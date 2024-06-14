@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class SharkEnabler : MonoBehaviour
 {
     public GameObject enableObject;
     public GameObject thisTrigger;
+    [HideInInspector]
+    public int collideAmount;
+    public int triggerAfterCollisionAmount;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +26,15 @@ public class SharkEnabler : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            enableObject.SetActive(true);
-            Destroy(thisTrigger);
+            collideAmount += 1;
+            if (collideAmount == triggerAfterCollisionAmount)
+            {
+                enableObject.SetActive(true);
+                Destroy(thisTrigger);
 
+            }
         }
+        
 
     }
 }
