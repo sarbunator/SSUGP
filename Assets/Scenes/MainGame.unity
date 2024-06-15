@@ -11042,39 +11042,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 796924735695568863, guid: 3fc8f098caa821c47ac35f1a30a671b8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -413.9
+      value: -473.5
       objectReference: {fileID: 0}
     - target: {fileID: 2425359476497465660, guid: 3fc8f098caa821c47ac35f1a30a671b8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -717.1
+      value: -709.2
       objectReference: {fileID: 0}
     - target: {fileID: 2425359476497465660, guid: 3fc8f098caa821c47ac35f1a30a671b8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -413.8
+      value: -473.6
       objectReference: {fileID: 0}
     - target: {fileID: 3343195567785461236, guid: 3fc8f098caa821c47ac35f1a30a671b8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -615.3
+      value: -620
       objectReference: {fileID: 0}
     - target: {fileID: 3343195567785461236, guid: 3fc8f098caa821c47ac35f1a30a671b8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 342.6
+      value: 408
       objectReference: {fileID: 0}
     - target: {fileID: 3668107978085327795, guid: 3fc8f098caa821c47ac35f1a30a671b8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 403.7
+      value: 469
       objectReference: {fileID: 0}
     - target: {fileID: 4538423685125455184, guid: 3fc8f098caa821c47ac35f1a30a671b8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -398
+      value: -458
       objectReference: {fileID: 0}
     - target: {fileID: 5095604607856233899, guid: 3fc8f098caa821c47ac35f1a30a671b8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -760
+      value: -752
       objectReference: {fileID: 0}
     - target: {fileID: 5095604607856233899, guid: 3fc8f098caa821c47ac35f1a30a671b8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -398
+      value: -458
       objectReference: {fileID: 0}
     - target: {fileID: 5465568240039515171, guid: 3fc8f098caa821c47ac35f1a30a671b8, type: 3}
       propertyPath: m_Pivot.x
