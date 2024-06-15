@@ -982,10 +982,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Project Manager\t\tSara Laurila\nProgramming\t\tJani Kallavuo, Toni Turtia,
-    Sara Laurila\nArt\t\t\t\tAnniina Kaalinp\xE4\xE4, Iago Mota, Maria Jaakola\nLead
-    Programmer\t\tToni Turtia\nLead Artist\t\t\tMaria Jaakola\nScribe\t\t\tAnniina
-    Kaalinp\xE4\xE4\n"
+  m_text: "Project Manager\t\tSara Laurila\nProgrammers\t\tJani Kallavuo, Toni Turtia,
+    Sara Laurila\nGraphic Artists\t\tAnniina Kaalinp\xE4\xE4, Iago Mota, Maria Jaakola\nLead
+    Programmer\t\tToni Turtia\nLead Graphic Artist\tMaria Jaakola\nSFX\t\t\t\tIago
+    Mota\nMusic\t\t\t\tMaria Jaakola\nScribe\t\t\tAnniina Kaalinp\xE4\xE4\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1144,7 +1144,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 599749659}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 751290371}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &599749659
 MonoBehaviour:
   m_ObjectHideFlags: 0
