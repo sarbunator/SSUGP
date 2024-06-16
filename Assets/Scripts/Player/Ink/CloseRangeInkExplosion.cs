@@ -9,10 +9,20 @@ public class CloseRangeInkExplosion : MonoBehaviour
 
     private Material material;
 
+    public float effectTime;
+    public Collider2D inkCollider2D;
+
     void Start()
     {
         material = GetComponent<Renderer>().material;
         StartCoroutine(InkCloudFading());
+        StartCoroutine(CollisionRemover());
+    }
+
+    IEnumerator CollisionRemover()
+    {
+        yield return new WaitForSeconds(effectTime);
+        inkCollider2D.enabled = false;
     }
 
     IEnumerator InkCloudFading()

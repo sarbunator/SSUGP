@@ -135,3 +135,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTime: 2
   fadingTime: 5
+  effectTime: 1
+  inkCollider2D: {fileID: 6024974991973889966}
