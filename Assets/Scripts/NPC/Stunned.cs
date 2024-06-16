@@ -9,6 +9,8 @@ public class Stunned : MonoBehaviour
     [HideInInspector]
     public bool isStunned;
 
+    public GameObject stunEffect;
+
     public EnemyPatrol enemyPatrol;
     private bool waiting;
 
@@ -18,10 +20,12 @@ public class Stunned : MonoBehaviour
     {
         waiting = true;
         isStunned = true;
+        stunEffect.SetActive(true);
         enemyPatrol.enabled = false;
         yield return new WaitForSeconds(stunDuration);
         enemyPatrol.enabled = true;
         isStunned = false;
+        stunEffect.SetActive(false);
         waiting = false;
     }
 
@@ -29,10 +33,12 @@ public class Stunned : MonoBehaviour
     {
         waiting = true;
         isStunned = true;
+        stunEffect.SetActive(true);
         enemyPatrol.enabled = false;
         yield return new WaitForSeconds(stunDurationSecondary);
         enemyPatrol.enabled = true;
         isStunned = false;
+        stunEffect.SetActive(false);
         waiting = false;
     }
 

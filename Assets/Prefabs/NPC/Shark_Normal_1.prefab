@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1547854356672449040}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shark_Default_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8313222439167572658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jaw_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5188705465048772774}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mouth_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3268115311005576588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1118159385846027346}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3071004996089584448}
   - component: {fileID: 2232741354479517524}
   - component: {fileID: 9119883640934924957}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 5744439092555739929}
   - component: {fileID: 2064893519027857891}
   - component: {fileID: 7692388233302195294}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eyebrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 2650786627161108150}
   - component: {fileID: 6654102176926249130}
   - component: {fileID: 5941364901499909764}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cheek_Hide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 6209921898821784080}
   - component: {fileID: 5633235326687263479}
   - component: {fileID: 2525782059265187524}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Specular
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,7 +595,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6965329341877230350}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cheek_Hide_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,7 +627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7149157215917799356}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mouth_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -658,7 +658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1884738114852446657}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 4809801705425172575}
   - component: {fileID: 7841644478452506634}
   - component: {fileID: 4348054515486044360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fin_Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7221492831424042970}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fin_Side_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +833,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3723975159082175103}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eyebrow_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +866,7 @@ GameObject:
   - component: {fileID: 4384599727418659881}
   - component: {fileID: 2255017115978381853}
   - component: {fileID: 1070217206263870408}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fin_Side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -973,7 +973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3770056295347249705}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eyebrow_Hide_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1005,7 +1005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8279544433005093680}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1037,7 +1037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 454558446000043618}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jaw_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1071,7 +1071,7 @@ GameObject:
   - component: {fileID: 1932893232027885829}
   - component: {fileID: 7382433091484213294}
   - component: {fileID: 5521815634384039728}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eyebrow_Hide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1174,7 +1174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8700640821580686682}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1206,7 +1206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8544508809839711833}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mouth_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1238,7 +1238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8214764660990281475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fin_Upper_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1269,7 +1269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 854070235894299707}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jaw_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1301,7 +1301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1280904899178616853}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1339,7 +1339,7 @@ GameObject:
   - component: {fileID: 1984806805893086066}
   - component: {fileID: 7154620870310641258}
   - component: {fileID: 5703919288978640838}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 7263775787318083911}
   - component: {fileID: 678497271471620785}
   - component: {fileID: 3233206801825626758}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jaw_Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1563,7 +1563,7 @@ GameObject:
   - component: {fileID: 8786420673215211515}
   - component: {fileID: 6510707925596652281}
   - component: {fileID: 1810680402005336801}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cheek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1666,7 +1666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2101733052011571796}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cheek_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1697,7 +1697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4985081535692523140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mouth_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1730,7 +1730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5888569639381166352}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1770,7 +1770,7 @@ GameObject:
   - component: {fileID: 6124954238241484352}
   - component: {fileID: 8518303542780453147}
   - component: {fileID: 6926115833389660618}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shark_Normal_1
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -1791,6 +1791,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1547854356672449040}
+  - {fileID: 4612218255930319783}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &771856528488417418
@@ -1847,6 +1848,7 @@ MonoBehaviour:
   stunDuration: 2
   stunDurationSecondary: 4
   isStunned: 0
+  stunEffect: {fileID: 2055427994230039942}
   enemyPatrol: {fileID: 455781789218035917}
 --- !u!114 &455781789218035917
 MonoBehaviour:
@@ -1865,9 +1867,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   speed: 6
   player: {fileID: 0}
-  detectionRange: 5
+  detectionRange: 6
   animator: {fileID: 771856528488417418}
 --- !u!114 &7068489514307948306
 MonoBehaviour:
@@ -1963,3 +1966,90 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!1001 &1744676814207923776
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3062250153167417825}
+    m_Modifications:
+    - target: {fileID: 337785981539226566, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_Name
+      value: Stun
+      objectReference: {fileID: 0}
+    - target: {fileID: 337785981539226566, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2969546301853670115, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.46908036
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.46908036
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.46908036
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.0800004
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6699999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.002963582
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+--- !u!1 &2055427994230039942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 337785981539226566, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+  m_PrefabInstance: {fileID: 1744676814207923776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4612218255930319783 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6356745389922932199, guid: 8b2662c520cb2d148ad606523d9de404, type: 3}
+  m_PrefabInstance: {fileID: 1744676814207923776}
+  m_PrefabAsset: {fileID: 0}
