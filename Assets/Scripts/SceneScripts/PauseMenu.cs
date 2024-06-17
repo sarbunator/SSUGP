@@ -2,21 +2,14 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenuUI; 
-    public GameObject optionsMenuUI;
-
+    public GameObject pauseMenuUI;
     private bool isPaused = false;
-    private bool isInOptions = false;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isInOptions)
-            {
-                CloseOptionsMenu();
-            }
-            else if (isPaused)
+            if (isPaused)
             {
                 ResumeGame();
             }
@@ -39,20 +32,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-    }
-
-    public void OpenOptionsMenu()
-    {
-        optionsMenuUI.SetActive(true);
-        pauseMenuUI.SetActive(false);
-        isInOptions = true;
-    }
-
-    public void CloseOptionsMenu()
-    {
-        optionsMenuUI.SetActive(false);
-        pauseMenuUI.SetActive(true);
-        isInOptions = false;
     }
 
     public void QuitGame()
