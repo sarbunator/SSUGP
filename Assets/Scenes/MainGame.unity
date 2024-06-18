@@ -4184,6 +4184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1075390990}
   optionsMenuUI: {fileID: 0}
+  inkShooting: {fileID: 0}
 --- !u!114 &1075390993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4792,6 +4793,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 257479814193003355}
+    - target: {fileID: 455781789218035917, guid: 17e1716e683422d44bc7e4f982384e0b, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 2089387774}
     - target: {fileID: 455781789218035917, guid: 17e1716e683422d44bc7e4f982384e0b, type: 3}
       propertyPath: detectionRange
       value: 6
@@ -8040,6 +8045,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 257479814193003355}
     - target: {fileID: 455781789218035917, guid: 17e1716e683422d44bc7e4f982384e0b, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 2089387774}
+    - target: {fileID: 455781789218035917, guid: 17e1716e683422d44bc7e4f982384e0b, type: 3}
       propertyPath: detectionRange
       value: 6
       objectReference: {fileID: 0}
@@ -8452,6 +8461,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1864888792 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 961137926439858316, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
+  m_PrefabInstance: {fileID: 257479814193003354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb17f2293b9b8043a5bbdcb87c9aacf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1870376387
 GameObject:
   m_ObjectHideFlags: 0
@@ -10133,6 +10153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 638230927463206575}
   optionsMenuUI: {fileID: 316262858}
+  inkShooting: {fileID: 1864888792}
 --- !u!4 &8188269292953930
 Transform:
   m_ObjectHideFlags: 0
@@ -10485,6 +10506,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2055083326954323073, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2710883584037366780, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: m_Name
       value: Octopus
@@ -11027,11 +11052,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2204844014320583094, guid: 2de4cd9d64f73ab4d90832b0bd9d9b96, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.286
+      value: 9.51
       objectReference: {fileID: 0}
     - target: {fileID: 2204844014320583094, guid: 2de4cd9d64f73ab4d90832b0bd9d9b96, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.382
+      value: -2.51
       objectReference: {fileID: 0}
     - target: {fileID: 2204844014320583094, guid: 2de4cd9d64f73ab4d90832b0bd9d9b96, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11465,6 +11490,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 367781026}
+    - target: {fileID: 2685302576902481945, guid: 11986e3be9da8444d8455849780b258f, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 2089387774}
     - target: {fileID: 2685302576902481945, guid: 11986e3be9da8444d8455849780b258f, type: 3}
       propertyPath: detectionRange
       value: 10
@@ -14816,11 +14845,11 @@ PrefabInstance:
       objectReference: {fileID: 2089387775}
     - target: {fileID: 9104373318970510932, guid: e25965333f057a74596b49c08dcc6062, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.77
+      value: 6.08
       objectReference: {fileID: 0}
     - target: {fileID: 9104373318970510932, guid: e25965333f057a74596b49c08dcc6062, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.04
+      value: -8.15
       objectReference: {fileID: 0}
     - target: {fileID: 9104373318970510932, guid: e25965333f057a74596b49c08dcc6062, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17083,6 +17112,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 257479814193003355}
     - target: {fileID: 455781789218035917, guid: 17e1716e683422d44bc7e4f982384e0b, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 2089387774}
+    - target: {fileID: 455781789218035917, guid: 17e1716e683422d44bc7e4f982384e0b, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 849316969}
@@ -17708,6 +17741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 638230927463206575}
   optionsMenuUI: {fileID: 0}
+  inkShooting: {fileID: 1864888792}
 --- !u!4 &7990336408255587049
 Transform:
   m_ObjectHideFlags: 0

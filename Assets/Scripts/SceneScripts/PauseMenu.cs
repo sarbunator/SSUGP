@@ -6,6 +6,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject optionsMenuUI;
     private bool isPaused = false;
 
+    public InkShooting inkShooting;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -30,6 +32,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        inkShooting.enabled = true;
     }
 
     void PauseGame()
@@ -37,6 +40,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        inkShooting.enabled = false;
     }
 
     public void OpenOptionsMenu()

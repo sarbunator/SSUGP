@@ -8,6 +8,7 @@ public class EnemyPatrol : MonoBehaviour
     public float speed;
     public GameObject player;
     public float detectionRange;
+    public PlayerHealth playerHealth;
 
     public Animator animator;
 
@@ -25,13 +26,13 @@ public class EnemyPatrol : MonoBehaviour
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distanceToPlayer < detectionRange)
+        if (distanceToPlayer < detectionRange && playerHealth.isDead == false)
         {
             // Start chasing the player
             isChasingPlayer = true;
             animator.SetBool("isAggro", isChasingPlayer);
         }
-        else if (distanceToPlayer >= detectionRange && isChasingPlayer)
+        else if (distanceToPlayer >= detectionRange && isChasingPlayer || playerHealth.isDead)
         {
             // Stop chasing the player and return to patrolling
             isChasingPlayer = false;
