@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 
 public class UIManager : MonoBehaviour
@@ -11,52 +9,41 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text restartText;
     private bool isGameOver = false;
 
-    public PlayerHealth isDead;
+    public PlayerHealth playerHealth; // reference to the PlayerHealth script (liittyy gameoverpanel delay)
 
     void Start()
     {
-        //Disables panel if active
         gameOverPanel.SetActive(false);
         restartText.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        //Trigger game over manually and check with bool so it isn't called multiple times
-        if ((isDead.isDead) && !isGameOver)
+        if (playerHealth.isDead && !isGameOver)
         {
             isGameOver = true;
-
             StartCoroutine(GameOverSequence());
         }
 
-        
         if (isGameOver)
         {
-          
             if (Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
 
-            
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 print("Application Quit");
                 Application.Quit();
             }
         }
-
-
     }
 
-    
     private IEnumerator GameOverSequence()
     {
+        yield return new WaitForSeconds(3.0f); // Delay before showing the Game Over panel
         gameOverPanel.SetActive(true);
-
-        yield return new WaitForSeconds(5.0f);
-
         restartText.gameObject.SetActive(true);
     }
 }

@@ -27,7 +27,6 @@ public class PlayerHealth : MonoBehaviour
     public PlayerMoveUnderwater moveUnderwater;
     public InkShooting inkShooting;
     public PolygonCollider2D polygonCollider;
-    
 
 
     void Start()
@@ -39,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
             StartCoroutine(Death());
             //source.PlayOneShot(audioDeath);
@@ -58,12 +57,6 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
         animator.SetBool("isDead", isDead);
         yield return new WaitForSecondsRealtime(deathAnimationTime);
-        isDead = false;
-
     }
 
-    void GameOver()
-    {
-        SceneManager.LoadScene("GameOverScene"); // Make sure "GameOver" is the exact name of your game over scene
-    }
 }
