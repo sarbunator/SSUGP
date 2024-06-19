@@ -68,6 +68,10 @@ public class EyeMechanics : MonoBehaviour
         SpriteChangeIris(3);
         expressionDead.enabled = true;
         yield return new WaitForSecondsRealtime(damagedTime);
+        if (playerHealth.isDead)
+        {
+            yield break;
+        }
         SpriteChangeIris(0);
         expressionDead.enabled = false;
     }

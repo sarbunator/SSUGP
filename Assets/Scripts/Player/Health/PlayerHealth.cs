@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
         if (health <= 0 && !isDead)
         {
+            eyeMechanics.StartDeadCoroutine();
             StartCoroutine(Death());
             //source.PlayOneShot(audioDeath);
             //source.Stop();
@@ -54,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator Death()
     {
-        isDead = true;
+        isDead = true;  
         animator.SetBool("isDead", isDead);
         yield return new WaitForSecondsRealtime(deathAnimationTime);
     }
