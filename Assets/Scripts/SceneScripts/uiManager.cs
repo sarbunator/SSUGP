@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     {
         gameUI.SetActive(true); // GameUI enabloituna
         gameOverPanel.SetActive(false);
-        restartText.gameObject.SetActive(false);
+        //restartText.gameObject.SetActive(false);
 
         // muut paneelit disabloitu
         tutorialPanel.SetActive(false);
@@ -59,6 +59,6 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3.0f); // Delay before showing the Game Over panel
         gameOverPanel.SetActive(true); 
-        restartText.gameObject.SetActive(true);
+        //restartText.gameObject.SetActive(true);
     }
 }
