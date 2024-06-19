@@ -15,6 +15,7 @@ public class Damage : MonoBehaviour
     public bool damageImmunity;
     public float damageGraceTime;
 
+    public SharkProgressiveDifficulty progDifficulty;
 
 
     public Animator animator;
@@ -45,7 +46,10 @@ public class Damage : MonoBehaviour
     
     void Update()
     {
-        
+        if (progDifficulty.sharkDamage > damage)
+        {
+            damage = progDifficulty.sharkDamage;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)

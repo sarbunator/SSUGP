@@ -16,6 +16,8 @@ public class EnemyPatrol : MonoBehaviour
     private bool isChasingPlayer;
     private float closeEnoughDistance = 0.1f; // Threshold to consider the NPC has reached a waypoint
 
+    public SharkProgressiveDifficulty progDifficulty;
+
     void Start()
     {
         targetPoint = 0;
@@ -25,6 +27,7 @@ public class EnemyPatrol : MonoBehaviour
     void Update()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        StatCheck();
 
         if (distanceToPlayer < detectionRange && playerHealth.isDead == false)
         {
@@ -68,6 +71,18 @@ public class EnemyPatrol : MonoBehaviour
     void MoveTowards(Vector2 targetPosition)
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+    }
+
+    void StatCheck()
+    {
+        if (progDifficulty.sharkSpeed > speed) 
+        {
+            speed = progDifficulty.sharkSpeed;
+        }
+        if (progDifficulty.aggroRange > detectionRange)
+        {
+            detectionRange = progDifficulty.aggroRange;
+        }
     }
 
     int GetClosestPatrolPointIndex()
