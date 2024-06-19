@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
     private bool isPaused = false;
 
     public InkShooting inkShooting;
+    public SceneChanger sceneChanger;
 
     void Update()
     {
@@ -53,10 +54,11 @@ public class PauseMenu : MonoBehaviour
     {
         optionsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
+        Debug.Log("Returning to pause menu");
     }
 
     public void QuitGame()
     {
-        Application.Quit();
+        sceneChanger.QuitGame();
     }
 }
