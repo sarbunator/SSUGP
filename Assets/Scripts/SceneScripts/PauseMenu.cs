@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (optionsMenuUI.activeSelf)
+            if (optionsMenuUI != null && optionsMenuUI.activeSelf)
             {
                 BackToPauseMenu();
             }
@@ -30,10 +30,26 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        pauseMenuUI.SetActive(false);
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("pauseMenuUI is not assigned in PauseMenu script.");
+        }
+
         Time.timeScale = 1f;
         isPaused = false;
-        inkShooting.enabled = true;
+
+        if (inkShooting != null)
+        {
+            inkShooting.enabled = true;
+        }
+        else
+        {
+            Debug.LogError("inkShooting is not assigned in PauseMenu script.");
+        }
     }
 
     void PauseGame()

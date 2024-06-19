@@ -19,7 +19,7 @@ public class SceneChanger : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f; // game not paused
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
 
     
