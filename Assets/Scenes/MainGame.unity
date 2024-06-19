@@ -13957,6 +13957,18 @@ PrefabInstance:
       propertyPath: pointText
       value: 
       objectReference: {fileID: 2257214537622101925}
+    - target: {fileID: 9186129013242117045, guid: d55201c8eb8a6cd45981c825de2027a2, type: 3}
+      propertyPath: inkShooting
+      value: 
+      objectReference: {fileID: 1864888792}
+    - target: {fileID: 9186129013242117045, guid: d55201c8eb8a6cd45981c825de2027a2, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 638230927463206575}
+    - target: {fileID: 9186129013242117045, guid: d55201c8eb8a6cd45981c825de2027a2, type: 3}
+      propertyPath: optionsMenuUI
+      value: 
+      objectReference: {fileID: 316262858}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
