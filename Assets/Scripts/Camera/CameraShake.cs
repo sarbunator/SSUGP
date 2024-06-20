@@ -28,6 +28,6 @@ public class CameraShake : MonoBehaviour
 
         // Reset to the original position
         transform.localPosition = originalPos;
-        Debug.Log("Shake complete.");
+        //Debug.Log("Shake complete.");
     }
 }

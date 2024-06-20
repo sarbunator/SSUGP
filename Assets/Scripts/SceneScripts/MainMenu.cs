@@ -5,6 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    void Awake()
+    {
+        Debug.Log("PauseMenu Awake called.");
+    }
+
+    void Start()
+    {
+        Debug.Log("PauseMenu Start called.");
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("PauseMenu OnDestroy called.");
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);

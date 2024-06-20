@@ -4,16 +4,37 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
+    public GameObject tutorialMenuUI;
     private bool isPaused = false;
 
     public InkShooting inkShooting;
     public SceneChanger sceneChanger;
+
+    
+    void Awake()
+    {
+        Debug.Log("PauseMenu Awake called.");
+    }
+
+    void Start()
+    {
+        Debug.Log("PauseMenu Start called.");
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("PauseMenu OnDestroy called.");
+    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (optionsMenuUI != null && optionsMenuUI.activeSelf)
+            {
+                BackToPauseMenu();
+            }
+            else if (tutorialMenuUI != null && tutorialMenuUI.activeSelf)
             {
                 BackToPauseMenu();
             }
@@ -66,9 +87,16 @@ public class PauseMenu : MonoBehaviour
         optionsMenuUI.SetActive(true);
     }
 
+    public void OpenTutorialMenu()
+    {
+        pauseMenuUI.SetActive(false);
+        tutorialMenuUI.SetActive(true);
+    }
+
     public void BackToPauseMenu()
     {
         optionsMenuUI.SetActive(false);
+        tutorialMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
         Debug.Log("Returning to pause menu");
     }

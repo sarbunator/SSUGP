@@ -11,14 +11,22 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null)
         {
+            Debug.Log("GameManager Awake called.");
             Instance = this;
             DontDestroyOnLoad(gameObject); // make sure the GameManager persists between scenes
             inkCount = maxInkCount;
+            Debug.Log("GameManager instance created.");
         }
         else
         {
+            Debug.LogWarning("Duplicate GameManager instance detected and destroyed.");
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("GameManager OnDestroy called.");
     }
 
     public bool UseInk(int amount)

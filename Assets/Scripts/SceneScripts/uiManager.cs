@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour
 
     public void RestartGameFromUI()
     {
+        Debug.Log("Restarting game from UI...");
         sceneChanger.RestartGame();
         // Reset UI state
         isGameOver = false;

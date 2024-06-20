@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9186129013242117045}
   - component: {fileID: 805433238177255873}
   - component: {fileID: 7061047108214068854}
+  - component: {fileID: 4294523091169768296}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -78,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
   optionsMenuUI: {fileID: 0}
+  tutorialMenuUI: {fileID: 0}
   inkShooting: {fileID: 0}
   sceneChanger: {fileID: 805433238177255873}
 --- !u!114 &805433238177255873
@@ -104,3 +106,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4605048991ddefe48978808d58fc9284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4294523091169768296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858234452989169137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6430dbd8992b5f94db6a9d7b96228bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyTimer: 30
+  sharkDamage: 10
+  sharkSpeed: 0
+  aggroRange: 0
+  rotationTimes: 0
