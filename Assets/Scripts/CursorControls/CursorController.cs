@@ -17,8 +17,8 @@ public class CursorController : MonoBehaviour
 
     private void ChangeCursor(Texture2D cursorType)
     {
-        // Vector2 hotspot = new Vector2(cursorType.width / 2, cursorType.height / 2);     //Changes the cursor pointer to the middle of the icon "hotspot"
-        Cursor.SetCursor(cursorType, Vector2.zero, CursorMode.Auto); //if there is a targeting icon instead of an arrow head -> change "Vector2.zero" to "hotspot"
+        Vector2 hotspot = new Vector2(cursorType.width / 2, cursorType.height / 2);     //Changes the cursor pointer to the middle of the icon "hotspot"
+        Cursor.SetCursor(cursorType, hotspot, CursorMode.ForceSoftware); //if there is a targeting icon instead of an arrow head -> change "Vector2.zero" to "hotspot"
     }
     void Start()
     {
