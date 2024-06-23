@@ -10,12 +10,10 @@ public class PointManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject); // Ensure the entire GameObject persists across scenes
-        Debug.Log("PointManager Awake called.");
     }
 
     void Start()
     {
-        Debug.Log("PointManager Start called.");
 
         // Try to find the pointText if it's not assigned in the inspector
         if (pointText == null)
@@ -24,11 +22,6 @@ public class PointManager : MonoBehaviour
             if (pointTextObject != null)
             {
                 pointText = pointTextObject.GetComponent<Text>();
-                Debug.Log("PointText object found and assigned.");
-            }
-            else
-            {
-                Debug.LogError("PointText object not found in the scene.");
             }
         }
     }

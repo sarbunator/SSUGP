@@ -10,21 +10,6 @@ public class PauseMenu : MonoBehaviour
     public InkShooting inkShooting;
     public SceneChanger sceneChanger;
 
-    
-    void Awake()
-    {
-        Debug.Log("PauseMenu Awake called.");
-    }
-
-    void Start()
-    {
-        Debug.Log("PauseMenu Start called.");
-    }
-
-    void OnDestroy()
-    {
-        Debug.Log("PauseMenu OnDestroy called.");
-    }
 
     void Update()
     {
@@ -55,10 +40,6 @@ public class PauseMenu : MonoBehaviour
         {
             pauseMenuUI.SetActive(false);
         }
-        else
-        {
-            Debug.LogError("pauseMenuUI is not assigned in PauseMenu script.");
-        }
 
         Time.timeScale = 1f;
         isPaused = false;
@@ -66,10 +47,6 @@ public class PauseMenu : MonoBehaviour
         if (inkShooting != null)
         {
             inkShooting.enabled = true;
-        }
-        else
-        {
-            Debug.LogError("inkShooting is not assigned in PauseMenu script.");
         }
     }
 
@@ -98,7 +75,6 @@ public class PauseMenu : MonoBehaviour
         optionsMenuUI.SetActive(false);
         tutorialMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
-        Debug.Log("Returning to pause menu");
     }
 
     public void QuitGame()
