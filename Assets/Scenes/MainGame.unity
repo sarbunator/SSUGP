@@ -3553,8 +3553,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 1588985201840625266}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -3769,9 +3769,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: RestartGameFromUI
+      - m_Target: {fileID: 1588985201840625267}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5407,6 +5407,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 984000949}
+  musicToggle: {fileID: 0}
+  sfxToggle: {fileID: 0}
 --- !u!114 &984000949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7484,6 +7486,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2de4cd9d64f73ab4d90832b0bd9d9b96, type: 3}
+--- !u!1 &1231499841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1231499842}
+  - component: {fileID: 1231499843}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1231499842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231499841}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 614.7875, y: 343.6279, z: -0.49396086}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1231499843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231499841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 495d20f299adb3f43a919c4866d005e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 984000949}
+  musicToggle: {fileID: 1260328191}
+  sfxToggle: {fileID: 1335996070}
 --- !u!1 &1260328189
 GameObject:
   m_ObjectHideFlags: 0
@@ -7567,7 +7616,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1231499843}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ToggleMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1267968963
 GameObject:
@@ -8288,7 +8349,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1231499843}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ToggleSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1336911912
 GameObject:
@@ -15629,6 +15702,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ba2edd0f1fba3419c8f33a93067c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1588985201840625267 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7061047108214068854, guid: d55201c8eb8a6cd45981c825de2027a2, type: 3}
+  m_PrefabInstance: {fileID: 1588985201840625264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588985201840625265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4605048991ddefe48978808d58fc9284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1590778683841871783
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17951,7 +18035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &4146645380174214812
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21971,6 +22055,7 @@ SceneRoots:
   - {fileID: 7053859603061071533}
   - {fileID: 2900089598592633447}
   - {fileID: 5407815777092501926}
+  - {fileID: 1231499842}
   - {fileID: 437427007}
   - {fileID: 1588985201840625264}
   - {fileID: 1287646446}

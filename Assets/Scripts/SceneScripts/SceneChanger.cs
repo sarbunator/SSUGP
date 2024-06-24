@@ -7,41 +7,26 @@ public class SceneChanger : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("SceneChanger Awake called.");
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            Debug.Log("SceneChanger instance created.");
         }
         else
         {
-            Debug.LogWarning("Duplicate SceneChanger instance detected and destroyed.");
             Destroy(gameObject);
         }
         
     }
 
-    void Start()
-    {
-        Debug.Log("PauseMenu Start called.");
-    }
-
-    void OnDestroy()
-    {
-        Debug.Log("PauseMenu OnDestroy called.");
-    }
-
     public void LoadLevelScene()
     {
-        Debug.Log("Loading MainGame scene.");
         SceneManager.LoadScene("MainGame");
     }
 
     
     public void LoadMainMenu()
     {
-        Debug.Log("Loading MainMenu scene.");
         SceneManager.LoadScene("MainMenu");
     }
 
