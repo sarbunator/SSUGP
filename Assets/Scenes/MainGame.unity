@@ -5407,8 +5407,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 984000949}
-  musicToggle: {fileID: 0}
-  sfxToggle: {fileID: 0}
 --- !u!114 &984000949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7531,8 +7529,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 984000949}
-  musicToggle: {fileID: 1260328191}
-  sfxToggle: {fileID: 1335996070}
 --- !u!1 &1260328189
 GameObject:
   m_ObjectHideFlags: 0
@@ -18834,6 +18830,10 @@ PrefabInstance:
       propertyPath: cursor
       value: 
       objectReference: {fileID: 2800000, guid: 355424005a4689244838dc12cfd62a39, type: 3}
+    - target: {fileID: 7783705929744528126, guid: 8ce8be6067bac7949a96f8de4b335088, type: 3}
+      propertyPath: menuCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: c608157178ffc8e458e46312613d32fc, type: 3}
     - target: {fileID: 7783705929744528126, guid: 8ce8be6067bac7949a96f8de4b335088, type: 3}
       propertyPath: cursorClicked
       value: 
