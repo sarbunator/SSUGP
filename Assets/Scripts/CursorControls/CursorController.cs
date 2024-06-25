@@ -26,7 +26,7 @@ public class CursorController : MonoBehaviour
     {
         if (Time.timeScale == 0f)    
         {
-            ChangeCursor(menuCursor);
+            ChangeCursor(menuCursor);            
         }
         else
         {

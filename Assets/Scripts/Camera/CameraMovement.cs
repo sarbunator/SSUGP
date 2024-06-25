@@ -24,7 +24,7 @@ public class CameraMovement : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, desiredPos, speed * Time.deltaTime);
 
         Vector3 position = transform.position;
-        position.z = -10.0f;
+        position.z = -15.0f;
         transform.position = position;
     }
 

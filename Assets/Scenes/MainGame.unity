@@ -513,7 +513,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2625, y: 0.94}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 5.05, y: 3.76}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -13936,6 +13936,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Octopus
       objectReference: {fileID: 0}
+    - target: {fileID: 2838046165899126289, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2954179066409984027, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -14023,6 +14027,10 @@ PrefabInstance:
     - target: {fileID: 7032049834885004034, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424021633225042038, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 7548342187501164227, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: m_IsActive
@@ -20400,7 +20408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7532206845645387315, guid: 7a389de72bbfeec4b879e0555b3405ad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 7532206845645387315, guid: 7a389de72bbfeec4b879e0555b3405ad, type: 3}
       propertyPath: m_LocalRotation.w
