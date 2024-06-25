@@ -12,6 +12,7 @@ public class Stunned : MonoBehaviour
     public GameObject stunEffect;
 
     public EnemyPatrol enemyPatrol;
+    public Damage damage;
     private bool waiting;
 
 
@@ -22,8 +23,10 @@ public class Stunned : MonoBehaviour
         isStunned = true;
         stunEffect.SetActive(true);
         enemyPatrol.enabled = false;
+        damage.enabled = false;
         yield return new WaitForSeconds(stunDuration);
         enemyPatrol.enabled = true;
+        damage.enabled = true;
         isStunned = false;
         stunEffect.SetActive(false);
         waiting = false;

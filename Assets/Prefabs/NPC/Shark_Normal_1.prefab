@@ -1845,11 +1845,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48dd9b75cf22924bb4bffc7be463828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: 2
-  stunDurationSecondary: 4
+  stunDuration: 3
+  stunDurationSecondary: 6
   isStunned: 0
   stunEffect: {fileID: 2055427994230039942}
   enemyPatrol: {fileID: 455781789218035917}
+  damage: {fileID: 6124954238241484352}
 --- !u!114 &455781789218035917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,11 +1869,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speed: 6
+  speed: 5
   player: {fileID: 0}
-  detectionRange: 6
+  detectionRange: 5
   playerHealth: {fileID: 0}
   animator: {fileID: 771856528488417418}
+  progDifficulty: {fileID: 0}
 --- !u!114 &7068489514307948306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1904,6 +1906,7 @@ MonoBehaviour:
   isDamaged: 0
   damageImmunity: 0
   damageGraceTime: 0
+  progDifficulty: {fileID: 0}
   animator: {fileID: 0}
 --- !u!70 &8518303542780453147
 CapsuleCollider2D:

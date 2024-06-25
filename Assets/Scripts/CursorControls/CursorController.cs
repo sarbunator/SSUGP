@@ -33,7 +33,11 @@ public class CursorController : MonoBehaviour
             ChangeCursor(cursor);
         }
 
-
+        //if (Input.GetMouseButtonDown(0) && Time.timeScale == 1)
+        //{
+        //    ChangeCursor(cursorClicked);
+        //}
+        
     }
 
     void Start()
