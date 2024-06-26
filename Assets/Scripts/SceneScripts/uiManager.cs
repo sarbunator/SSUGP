@@ -4,6 +4,22 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    // Singleton instance
+    private static UIManager _instance;
+
+    // Property to access the instance
+    public static UIManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                Debug.LogError("UIManager instance is null!");
+            }
+            return _instance;
+        }
+    }
+
     [SerializeField] private GameObject gameUI; // gameui, healthbar etc
     [SerializeField] private GameObject gameOverPanel;
 
@@ -14,6 +30,20 @@ public class UIManager : MonoBehaviour
     public GameObject pauseGamePanel;
     public GameObject optionsPanel;
     public SceneChanger sceneChanger;
+
+    private void Awake()
+    {
+        // Singleton pattern implementation
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject); // Optional: if you want to persist this across scenes
+        }
+    }
 
     void Start()
     {
