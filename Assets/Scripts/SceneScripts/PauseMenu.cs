@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     public SceneChanger sceneChanger;
 
 
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -34,6 +35,10 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        
+    }
     public void ResumeGame()
     {
         if (pauseMenuUI != null)
@@ -55,6 +60,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        inkShooting = FindObjectOfType<InkShooting>();
         inkShooting.enabled = false;
     }
 

@@ -101,6 +101,8 @@ GameObject:
   - component: {fileID: 7609976430431984841}
   - component: {fileID: 6097535767964899190}
   - component: {fileID: 2055083326954323073}
+  - component: {fileID: 3458754614939146151}
+  - component: {fileID: 4216684281867487539}
   m_Layer: 7
   m_Name: Octopus
   m_TagString: Player
@@ -166,6 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   animator: {fileID: 2947475719858184393}
+  audioSource: {fileID: 4216684281867487539}
+  swim: {fileID: 8300000, guid: b13109a51d1b20f44a75e5c5e6bfda38, type: 3}
   movementForce: 25
   isFacingLeft: 1
   dashingPower: 30
@@ -434,7 +438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c683224ba2b631440b38ec7fb3179793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pm: {fileID: 0}
   eyeMechanics: {fileID: 7609976430431984841}
 --- !u!210 &2055083326954323073
 SortingGroup:
@@ -448,6 +451,114 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_SortAtRoot: 0
+--- !u!114 &3458754614939146151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2710883584037366780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639c47de17e2ad54cb0c5d6daa3935e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &4216684281867487539
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2710883584037366780}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b13109a51d1b20f44a75e5c5e6bfda38, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5495437623386376871
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,7 +950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7353804010293108405, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
       propertyPath: m_SortingOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: -7097631964422607584, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -940,6 +1051,10 @@ PrefabInstance:
     - target: {fileID: -2767561398958362836, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2767561398958362836, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: -2732270903086904994, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
       propertyPath: m_Layer
@@ -1071,7 +1186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3796869421801779116, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4168725719839983769, guid: 06976c1e466aba440b4e1d674ee41b3c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

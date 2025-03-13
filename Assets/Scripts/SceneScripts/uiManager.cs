@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    InkShooting inkShooting;
+
     // Singleton instance
     private static UIManager _instance;
 
@@ -43,13 +45,15 @@ public class UIManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(this.gameObject); // Optional: if you want to persist this across scenes
         }
+
+        inkShooting = FindObjectOfType<InkShooting>();
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
     void Start()
     {
         gameUI.SetActive(true); // GameUI enabloituna
         gameOverPanel.SetActive(false);
-
         // muut paneelit disabloitu
         tutorialPanel.SetActive(false);
         pauseGamePanel.SetActive(false);
@@ -59,7 +63,12 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         // onko player dead ja gameover sequence ei oo alkanu viel
-        if (playerHealth.isDead && !isGameOver)
+        if (playerHealth == null)
+        {
+            playerHealth = FindObjectOfType<PlayerHealth>();
+        }
+
+        if (playerHealth != null && playerHealth.isDead && !isGameOver)
         {
             isGameOver = true;
             StartCoroutine(GameOverSequence());
@@ -80,12 +89,20 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("Restarting game from UI...");
         sceneChanger.RestartGame();
+        ScoreManager.Instance.ResetScore();
+        GameManager.Instance.ResetInkCount();
         // Reset UI state
         isGameOver = false;
         gameOverPanel.SetActive(false);
         tutorialPanel.SetActive(false);
         pauseGamePanel.SetActive(false);
         optionsPanel.SetActive(false);
+        if(inkShooting != null)
+        {
+            inkShooting = FindObjectOfType<InkShooting>();
+            inkShooting.enabled = true;
+        }
+            
         gameUI.SetActive(true); // Ensure gameUI is active
     }
 

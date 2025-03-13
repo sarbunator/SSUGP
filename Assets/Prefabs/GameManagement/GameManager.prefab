@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7288001611162767147}
   - component: {fileID: 7569589840179546447}
   - component: {fileID: 9186129013242117045}
-  - component: {fileID: 805433238177255873}
   - component: {fileID: 7061047108214068854}
   - component: {fileID: 4294523091169768296}
   m_Layer: 0
@@ -81,19 +80,7 @@ MonoBehaviour:
   optionsMenuUI: {fileID: 0}
   tutorialMenuUI: {fileID: 0}
   inkShooting: {fileID: 0}
-  sceneChanger: {fileID: 805433238177255873}
---- !u!114 &805433238177255873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858234452989169137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33ba2edd0f1fba3419c8f33a93067c9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  sceneChanger: {fileID: 0}
 --- !u!114 &7061047108214068854
 MonoBehaviour:
   m_ObjectHideFlags: 0

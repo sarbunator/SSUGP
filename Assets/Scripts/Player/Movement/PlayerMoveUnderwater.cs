@@ -108,6 +108,7 @@ public class PlayerMoveUnderwater : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        pm = FindObjectOfType<PointManager>();
 
     }
 
