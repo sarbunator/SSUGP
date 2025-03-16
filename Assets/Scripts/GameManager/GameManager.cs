@@ -54,7 +54,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         ScoreManager.Instance.ResetScore();
-        ShowHighScores();
+        //ShowHighScores();
+        ShowHighestScore();
         gameOverPanel.SetActive(true);
         ResetInkCount();
     }
@@ -68,4 +69,20 @@ public class GameManager : MonoBehaviour
             highScoreText.text += $"{i + 1}. {scores[i]}\n";
         }
     }
+
+    private void ShowHighestScore()
+    {
+        var highScores = ScoreManager.Instance.GetHighScores();
+
+        if (highScores.Count > 0)
+        {
+            highScoreText.text = "" + highScores[0];
+        }
+        else
+        {
+            highScoreText.text = "";
+        }
+    }
+
+
 }
