@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3098eaafe2b0ed443bbc8c234d906afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursor: {fileID: 2800000, guid: 4f45e920c1a18a246b040b3a9966aa9c, type: 3}
-  cursorClicked: {fileID: 0}
+  cursor: {fileID: 2800000, guid: 355424005a4689244838dc12cfd62a39, type: 3}
+  cursorClicked: {fileID: 2800000, guid: cf0acc94d191a944db26638964c82f0c, type: 3}
+  menuCursor: {fileID: 2800000, guid: c608157178ffc8e458e46312613d32fc, type: 3}

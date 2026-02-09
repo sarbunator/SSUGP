@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
@@ -15,11 +14,22 @@ public class CameraMovement : MonoBehaviour
 
     void Start()
     {
-        
+        if (playerMouseThresholdPoint != null)
+        {
+            Vector3 initialPos = playerMouseThresholdPoint.position + offset;
+            initialPos.z = -15.0f;
+            transform.position = initialPos;
+        }
     }
    
     void CameraPosition()
     {
+        if (playerMouseThresholdPoint == null)
+        {
+            Debug.LogWarning("CameraMovement: playerMouseThresholdPoint is not assigned!");
+            return;
+        }
+
         Vector3 desiredPos = playerMouseThresholdPoint.position + offset;
         transform.position = Vector3.Lerp(transform.position, desiredPos, speed * Time.deltaTime);
 
@@ -38,6 +48,12 @@ public class CameraMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //CameraPosition();
+    }
+
+    private void LateUpdate()
+    {
         CameraPosition();
+
     }
 }

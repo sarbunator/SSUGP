@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class EyeMechanics : MonoBehaviour
 {
@@ -30,11 +31,14 @@ public class EyeMechanics : MonoBehaviour
     public float damagedTime;
 
     private bool waiting = false;
+    private bool deadCoroutineStarted = false;
 
     public PlayerHealth playerHealth;
 
     private Camera mainCamera;
     private SpriteRenderer spriteRenderer;
+
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -44,6 +48,7 @@ public class EyeMechanics : MonoBehaviour
         originalReflectionScale = eyeReflection.localScale;
         
     }
+
 
     public void SpriteChangeIris(int eyeIndex)
     {
@@ -130,7 +135,10 @@ public class EyeMechanics : MonoBehaviour
 
     public void ExpressionLogistic()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Mouse.current == null)
+            return;
+
+        if (Mouse.current.leftButton.wasPressedThisFrame)    //(Input.GetMouseButtonDown(0))
         {
             if (waiting)
             return;
@@ -140,8 +148,12 @@ public class EyeMechanics : MonoBehaviour
 
     void IrisCursorFollow()
     {
-        Vector3 mousePosition = Input.mousePosition;
+        if (Mouse.current == null)
+            return;
+
+        Vector3 mousePosition = Mouse.current.position.ReadValue();
         Vector3 worldMousePosition = mainCamera.ScreenToWorldPoint(mousePosition);
+        worldMousePosition.z = 0f;
         UpdateIrisPosition(eye, irisNormal, worldMousePosition);
     }
     
@@ -167,19 +179,20 @@ public class EyeMechanics : MonoBehaviour
 
     void Update()
     {
-        if (playerHealth.isDead == true)
+        if (playerHealth.isDead)
         {
-            StartCoroutine(Dead());
+            if (!deadCoroutineStarted)
+            {
+                deadCoroutineStarted = true;
+                StartCoroutine(Dead());
+            }
+            return;
         }
-        else
-        {
-            IrisCursorFollow();
-            ExpressionLogistic();
-        }
+
+        IrisCursorFollow();
+        ExpressionLogistic();
 
         //EyeReflectionHold();
-
-       
     }
 
     void UpdateIrisPosition(Transform eye, Transform irisNormal, Vector3 targetPosition)
