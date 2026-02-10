@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InkShooting : MonoBehaviour
 {
@@ -20,7 +21,35 @@ public class InkShooting : MonoBehaviour
     public int primaryFireInkCost = 1; // cost for ink shoot
     public int secondaryFireInkCost = 2; // cost for ink splash
 
-    
+    private PlayerControls playerControls;
+
+    private void Awake()
+    {
+        playerControls = new PlayerControls();
+
+        // Rekisteröi callbackit
+        playerControls.Gameplay.Shoot.started += OnShoot;
+        playerControls.Gameplay.Shoot.canceled += OnShoot;
+        playerControls.Gameplay.SecondaryFire.performed += OnSecondaryFire;
+    }
+
+    private void OnEnable()
+    {
+        playerControls.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Gameplay.Disable();
+    }
+
+    private void OnDestroy()
+    {
+        playerControls.Gameplay.Shoot.started -= OnShoot;
+        playerControls.Gameplay.Shoot.canceled -= OnShoot;
+        playerControls.Gameplay.SecondaryFire.performed -= OnSecondaryFire;
+    }
+
     void ShootInk()
     {
         if (GameManager.Instance.UseInk(primaryFireInkCost)) // check if there's enough ink to shoot
@@ -31,11 +60,35 @@ public class InkShooting : MonoBehaviour
             inkBullet = Instantiate(inkProjectilePrefab, transform.position, Quaternion.identity);
             playerPosition = inkBullet.transform.position;
 
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x, mouseScreenPos.y, Camera.main.nearClipPlane));
             shootDirection = ((Vector2)(mousePosition - transform.position)).normalized;
+            //Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //shootDirection = ((Vector2)(mousePosition - transform.position)).normalized;
         }
     }
- 
+
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        // Kun nappi painetaan alas -> aloita ammunta
+        if (context.started)
+        {
+            ShootInk();
+        }
+        // Kun nappi vapautetaan -> räjäytä muste
+        else if (context.canceled && isShooting)
+        {
+            ExplodeInk();
+        }
+    }
+
+    public void OnSecondaryFire(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            SecondaryFire();
+        }
+    }
 
     void ShootingControls()
     {
@@ -50,9 +103,9 @@ public class InkShooting : MonoBehaviour
 
         if (isShooting && inkBullet != null) // if the ink exploded and there is no inkbullet. (Here is added the possible ammo count condition check) ********************** via GameManager?
         {
-            inkBullet.transform.position +=(Vector3)(projectileSpeed * Time.deltaTime * shootDirection);
+            inkBullet.transform.position += (Vector3)(projectileSpeed * Time.deltaTime * shootDirection);
 
-            if(Vector2.Distance(playerPosition, inkBullet.transform.position) >= maxProjectileDistance)
+            if (Vector2.Distance(playerPosition, inkBullet.transform.position) >= maxProjectileDistance)
             {
                 ExplodeInk(); // If the ink flies too far it automatically explodes.
             }
@@ -60,7 +113,20 @@ public class InkShooting : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1)) // Need to add more here. Cooldown etc.
         {
-           SecondaryFire();
+            SecondaryFire();
+        }
+    }
+
+    void BulletControl()
+    {
+        if (isShooting && inkBullet != null)
+        {
+            inkBullet.transform.position += (Vector3)(projectileSpeed * Time.deltaTime * shootDirection);
+
+            if (Vector2.Distance(playerPosition, inkBullet.transform.position) >= maxProjectileDistance)
+            {
+                ExplodeInk();
+            }
         }
     }
 
@@ -96,6 +162,7 @@ public class InkShooting : MonoBehaviour
 
     void Update()
     {
-        ShootingControls();
+        //ShootingControls();
+        BulletControl();
     }
 }

@@ -38,12 +38,13 @@ public class PlayerMoveUnderwater : MonoBehaviour
     public PointManager pm;
 
     private PlayerControls playerControls;
+    private AudioManager audioManager;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        pm = FindObjectOfType<PointManager>();
-
+        pm = FindAnyObjectByType<PointManager>();
+        audioManager = FindAnyObjectByType<AudioManager>();
         // Luo Input System
         playerControls = new PlayerControls();
 
@@ -200,7 +201,10 @@ public class PlayerMoveUnderwater : MonoBehaviour
         rb.AddForce(moveDirection.normalized * dashingPower, ForceMode2D.Impulse);
         tr.emitting = true;
         animator.SetBool("isDashing", isDashing);
-        FindObjectOfType<AudioManager>().Play(new string[] { "Dash_1", "Dash_2", "Dash_3", "Dash_4" });
+        if (audioManager != null)
+        {
+            audioManager.Play(new string[] { "Dash_1", "Dash_2", "Dash_3", "Dash_4" });
+        }
         yield return new WaitForSeconds(dashingTime);
         tr.emitting = false;
         rb.gravityScale = originalGravity;
@@ -214,13 +218,19 @@ public class PlayerMoveUnderwater : MonoBehaviour
 
     void SwimmingSound()
     {
-        // Äänitehoste logiikka (sama kuin vanhassa ProcessInputs)
         bool isMoving = moveDirection.sqrMagnitude > 0.01f;
 
-        if (wasMoving && !isMoving)
+        // Aloita looppaus kun liike alkaa
+        if (!wasMoving && isMoving)
         {
             audioSource.clip = swim;
+            audioSource.loop = true;
             audioSource.Play();
+        }
+        // Pysäytä looppaus kun liike loppuu
+        else if (wasMoving && !isMoving)
+        {
+            audioSource.Stop();
         }
 
         wasMoving = isMoving;
