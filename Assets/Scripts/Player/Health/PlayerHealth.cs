@@ -28,22 +28,38 @@ public class PlayerHealth : MonoBehaviour
     public InkShooting inkShooting;
     public PolygonCollider2D polygonCollider;
 
-    //private void Awake()
-    //{
-    //    if (healthBar == null)
-    //    {
-    //        GameObject healthBarObject = GameObject.Find("Canvas/GameUI/HealthBar");
+    private PlayerControls playerControls;
 
-    //        if (healthBarObject != null)
-    //        {
-    //            healthBar = healthBarObject.GetComponent<Image>();
-    //        }
-    //        else
-    //        {
-    //            Debug.LogError("HealthBar not found! Check the hierarchy path.");
-    //        }
-    //    }
-    //}
+    private void Awake()
+    {
+        // Luo PlayerControls instanssi
+        playerControls = new PlayerControls();
+
+        //if (healthBar == null)
+        //{
+        //    GameObject healthBarObject = GameObject.Find("Canvas/GameUI/HealthBar");
+
+        //    if (healthBarObject != null)
+        //    {
+        //        healthBar = healthBarObject.GetComponent<Image>();
+        //    }
+        //    else
+        //    {
+        //        Debug.LogError("HealthBar not found! Check the hierarchy path.");
+        //    }
+        //}
+    }
+
+    private void OnEnable()
+    {
+        // Gameplay on päällä kun pelaaja on elossa
+        playerControls.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Gameplay.Disable();
+    }
 
     void Start()
     {
@@ -59,7 +75,7 @@ public class PlayerHealth : MonoBehaviour
             else
             {
                 // Jos nimeen perustuva haku ei toimi, etsitään Image-komponentti suoraan
-                healthBar = FindObjectOfType<Image>();
+                healthBar = FindAnyObjectByType<Image>();
 
                 // Tarkistetaan, että löytynyt Image on oikea HealthBar
                 if (healthBar != null && healthBar.name == "HealthBar")
@@ -87,14 +103,23 @@ public class PlayerHealth : MonoBehaviour
         {
             eyeMechanics.StartDeadCoroutine();
             StartCoroutine(Death());
+
+            //Disables ALL gamescripts and colliders that would allow the player to move or interact with the world, also plays death animation and sound
             //source.PlayOneShot(audioDeath);
             //source.Stop();
-            cameraTargeting.enabled = false;
-            eyeMechanics.enabled = false;
-            moveUnderwater.enabled = false;
-            inkShooting.enabled = false;
-            polygonCollider.enabled = false;
-            
+            if (cameraTargeting != null)
+                cameraTargeting.enabled = false;
+            if (eyeMechanics != null)
+                eyeMechanics.enabled = false;
+            if (moveUnderwater != null)
+                moveUnderwater.enabled = false;
+            if (inkShooting != null)
+                inkShooting.enabled = false;
+            if (polygonCollider != null)
+                polygonCollider.enabled = false;
+
+            // IMPORTANT: Disable player controls to prevent movement and shooting during death sequence
+            playerControls.Gameplay.Disable();
         }
     }
 

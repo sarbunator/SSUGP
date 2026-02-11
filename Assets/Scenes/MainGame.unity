@@ -15509,16 +15509,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2139209150}
     - target: {fileID: 6700817258356454839, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700817258356454839, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: waterDrag
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6700817258356454839, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: acceleration
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6700817258356454839, guid: 22ba704d64ac3b94fac3b5e98f9f0ff4, type: 3}
       propertyPath: dashingPower
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
