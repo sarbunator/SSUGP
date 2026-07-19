@@ -119,12 +119,16 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(true);
+
+        playerControls.PlayerUI.Enable();
     }
 
     public void OpenTutorialMenu()
     {
         pauseMenuUI.SetActive(false);
         tutorialMenuUI.SetActive(true);
+
+        playerControls.PlayerUI.Enable();
     }
 
     public void BackToPauseMenu()
@@ -138,6 +142,8 @@ public class PauseMenu : MonoBehaviour
             tutorialMenuUI.SetActive(false);
         }
         pauseMenuUI.SetActive(true);
+
+        playerControls.PlayerUI.Enable();
     }
 
     public void QuitGame()
