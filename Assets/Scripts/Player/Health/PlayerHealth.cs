@@ -34,20 +34,6 @@ public class PlayerHealth : MonoBehaviour
     {
         // Luo PlayerControls instanssi
         playerControls = new PlayerControls();
-
-        //if (healthBar == null)
-        //{
-        //    GameObject healthBarObject = GameObject.Find("Canvas/GameUI/HealthBar");
-
-        //    if (healthBarObject != null)
-        //    {
-        //        healthBar = healthBarObject.GetComponent<Image>();
-        //    }
-        //    else
-        //    {
-        //        Debug.LogError("HealthBar not found! Check the hierarchy path.");
-        //    }
-        //}
     }
 
     private void OnEnable()
@@ -63,33 +49,32 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        maxHealth = health;
-        if (healthBar != null)
-        {
-            GameObject healthBarObject = GameObject.Find("/UiManager/Canvas/GameUI/HealthBar");
+        health = maxHealth;
+        isDead = false;
 
-            if (healthBarObject != null)
+        // Always search for HealthBar on scene load to handle restarts properly
+        GameObject healthBarObject = GameObject.Find("Managers/UiManager/Canvas/GameUI/HealthBar");
+
+        if (healthBarObject != null)
+        {
+            healthBar = healthBarObject.GetComponent<Image>();
+            Debug.Log("HealthBar found and connected!");
+        }
+        else
+        {
+            // Fallback: search for any Image component with name "HealthBar"
+            healthBar = FindAnyObjectByType<Image>();
+
+            if (healthBar != null && healthBar.name == "HealthBar")
             {
-                healthBar = healthBarObject.GetComponent<Image>();
+                Debug.Log("HealthBar found dynamically!");
             }
             else
             {
-                // Jos nimeen perustuva haku ei toimi, etsitään Image-komponentti suoraan
-                healthBar = FindAnyObjectByType<Image>();
-
-                // Tarkistetaan, että löytynyt Image on oikea HealthBar
-                if (healthBar != null && healthBar.name == "HealthBar")
-                {
-                    Debug.Log("HealthBar found dynamically!");
-                }
-                else
-                {
-                    Debug.LogError("HealthBar not found! Check the hierarchy path.");
-                    healthBar = null;
-                }
+                Debug.LogError("HealthBar not found! Check the hierarchy path.");
+                healthBar = null;
             }
         }
-
     }
 
     void Update()

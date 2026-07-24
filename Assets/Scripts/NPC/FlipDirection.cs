@@ -1,56 +1,74 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class FlipDirection : MonoBehaviour
 {
+    [Header("Flip Settings")]
+    [Tooltip("Minimum movement distance required to trigger flip")]
+    public float movementThreshold = 0.01f;
+
+    [Tooltip("Time in seconds before allowing another flip (prevents rapid flipping)")]
+    public float flipCooldown = 0.1f;
+
+    [Header("Optional - Game State Check")]
+    [Tooltip("Optional: Reference to PlayerHealth to stop flipping when player is dead")]
+    public PlayerHealth playerHealth;
+
     private Vector3 previousPosition;
     private bool facingLeft = true;
-    public float movementThreshold;
+    private float lastFlipTime;
 
     void Start()
     {
-        // Saves the starting position
         previousPosition = transform.position;
+        lastFlipTime = -flipCooldown;
     }
 
     void Update()
     {
-        CheckAndFlipDirection();
+        if (ShouldCheckForFlip())
+        {
+            CheckAndFlipDirection();
+        }
+    }
 
+    bool ShouldCheckForFlip()
+    {
+        if (playerHealth != null && playerHealth.isDead)
+        {
+            return false;
+        }
+
+        return true;
     }
 
     void CheckAndFlipDirection()
     {
-        
-        Vector3 movement = transform.position - previousPosition; // Calculates current position and previous position difference.
+        Vector3 movement = transform.position - previousPosition;
 
         if (Mathf.Abs(movement.x) > movementThreshold)
         {
-            if (movement.x < 0 && !facingLeft) // If movement is greater than zero->Flip
+            if (Time.time - lastFlipTime >= flipCooldown)
             {
-                Flip();
-            }
-            else if (movement.x > 0 && facingLeft)
-            {
-                Flip();
+                if (movement.x < 0 && !facingLeft)
+                {
+                    Flip();
+                }
+                else if (movement.x > 0 && facingLeft)
+                {
+                    Flip();
+                }
             }
         }
 
-        
-
-        previousPosition = transform.position; // Update position for the next frame
+        previousPosition = transform.position;
     }
 
     void Flip()
     {
-        // flip by changing the localscale between + / -
         facingLeft = !facingLeft;
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+        lastFlipTime = Time.time;
     }
-
 }
